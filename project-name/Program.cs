@@ -4,11 +4,17 @@ namespace project_name
     {
         public static void Main(string[] args)
         {
+            //servicos
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddControllersWithViews();
+            //cria o WebApplication
             var app = builder.Build();
+            //habilita os middlewares para lidar com certas requisições
+            app.UseRouting();
+            app.MapControllers();
+            app.UseStaticFiles();
 
-            app.MapGet("/", () => "Hello World!");
-
+            //roda a aplicacao
             app.Run();
         }
     }
