@@ -33,5 +33,18 @@ namespace Servicos.DTO
         [Required(ErrorMessage = "O ID do endereço é obrigatório.")]
         [Display(Name = "ID do Endereço")]
         public int FkIdEndereco { get; set; }
+
+        /// <summary>
+        /// Converte o objeto atual de RestauranteAddRequest para um novo objeto do tipo Restaurante
+        /// </summary>
+        /// <returns>Um novo objeto dp tipo Restaurante baseado no objeto atual de RestauranteAddRequest</returns>
+        public Restaurante ToRestaurante() => new Restaurante()
+        {
+            Cnpj = Cnpj,
+            Nome = Nome,
+            Email = Email,
+            HashSenha = HashSenha,
+            FkIdEndereco = FkIdEndereco
+        };
     }
 }
