@@ -7,6 +7,7 @@ namespace project_name
             //servicos
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext();
             //cria o WebApplication
             var app = builder.Build();
             //habilita os middlewares para lidar com certas requisições
