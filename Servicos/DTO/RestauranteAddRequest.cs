@@ -26,9 +26,9 @@ namespace Servicos.DTO
         public string Email { get; set; }
 
         [Required(ErrorMessage = "A senha é obrigatória.")]
-        [StringLength(255, MinimumLength = 1, ErrorMessage = "A senha deve ter entre 1 e 255 caracteres.")]
+        [StringLength(30, MinimumLength = 8, ErrorMessage = "A senha deve ter entre 8 e 30 caracteres.")]
         [Display(Name = "Senha")]
-        public string HashSenha { get; set; }
+        public string Senha { get; set; }
 
         [Required(ErrorMessage = "O ID do endereço é obrigatório.")]
         [Display(Name = "ID do Endereço")]
@@ -43,7 +43,7 @@ namespace Servicos.DTO
             Cnpj = Cnpj,
             Nome = Nome,
             Email = Email,
-            HashSenha = HashSenha,
+            HashSenha = Senha,
             FkIdEndereco = FkIdEndereco
         };
     }
