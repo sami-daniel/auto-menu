@@ -7,13 +7,15 @@ namespace project_name
             //servicos
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext();
             //cria o WebApplication
             var app = builder.Build();
             //habilita os middlewares para lidar com certas requisições
-            app.UseRouting();
-            app.MapControllers();
             app.UseStaticFiles();
+            app.UseRouting();
+
+            app.MapControllerRoute(name: "default",
+                                   pattern: "{controller=Home}/{action=Index}"
+                );
 
             //roda a aplicacao
             app.Run();
