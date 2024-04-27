@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Entidades;
+using System.ComponentModel.DataAnnotations;
 
 namespace Servicos.DTO
 {
@@ -10,6 +11,7 @@ namespace Servicos.DTO
         [Required(ErrorMessage = "O CNPJ é obrigatório.")]
         [StringLength(14, MinimumLength = 1, ErrorMessage = "O CNPJ deve ter entre 1 e 14 caracteres.")]
         [Display(Name = "CNPJ")]
+        [RegularExpression(@"^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$", ErrorMessage = "O CNPJ não é válido!")]
         public string Cnpj { get; set; }
 
         [Required(ErrorMessage = "O nome é obrigatório.")]
