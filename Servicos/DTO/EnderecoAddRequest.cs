@@ -48,5 +48,17 @@ namespace Servicos.DTO
         [Required(ErrorMessage = "O complemento do endereço é obrigatório.")]
         [StringLength(100, ErrorMessage = "O complemento do endereço não pode exceder 100 caracteres.")]
         public string Complemento { get; set; }
+        /// <summary>
+        /// Converte o objeto atual de EnderecoAddRequest para um novo objeto do tipo Endereco
+        /// </summary>
+        /// <returns>Um novo objeto do tipo Endereco baseado no objeto atual de EnderecoAddRequest</returns>
+        public Endereco ToEndereco() => new Endereco()
+        {
+            Uf = Uf,
+            Cidade = Cidade,
+            Bairro = Bairro,
+            Numero = Numero,
+            Complemento = Complemento
+        };
     }
 }
