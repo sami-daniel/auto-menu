@@ -8,6 +8,7 @@ namespace Servicos.DTO
     /// </summary>
     public class RestauranteAddRequest
     {
+#pragma warning disable CS8618
         [Required(ErrorMessage = "O CNPJ é obrigatório.")]
         [StringLength(14, MinimumLength = 1, ErrorMessage = "O CNPJ deve ter entre 1 e 14 caracteres.")]
         [Display(Name = "CNPJ")]
@@ -38,6 +39,7 @@ namespace Servicos.DTO
         /// Converte o objeto atual de RestauranteAddRequest para um novo objeto do tipo Restaurante
         /// </summary>
         /// <returns>Um novo objeto dp tipo Restaurante baseado no objeto atual de RestauranteAddRequest</returns>
+#pragma warning restore CS8618
         public Restaurante ToRestaurante() => new Restaurante()
         {
             Cnpj = Cnpj,

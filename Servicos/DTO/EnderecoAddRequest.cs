@@ -8,6 +8,7 @@ namespace Servicos.DTO
     /// </summary>
     public class EnderecoAddRequest
     {
+#pragma warning disable CS8618
         /// <summary>
         /// Obtém ou define a sigla do estado.
         /// </summary>
@@ -52,6 +53,7 @@ namespace Servicos.DTO
         /// Converte o objeto atual de EnderecoAddRequest para um novo objeto do tipo Endereco
         /// </summary>
         /// <returns>Um novo objeto do tipo Endereco baseado no objeto atual de EnderecoAddRequest</returns>
+#pragma warning restore CS8618
         public Endereco ToEndereco() => new Endereco()
         {
             Uf = Uf,
