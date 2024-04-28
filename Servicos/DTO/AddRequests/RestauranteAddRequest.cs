@@ -2,7 +2,7 @@
 using Servicos.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace Servicos.DTO
+namespace Servicos.DTO.AddRequests
 {
     /// <summary>
     /// Representa um DTO para inserir um novo restaurante

@@ -1,7 +1,7 @@
-﻿using Entidades; 
-using System.ComponentModel.DataAnnotations; 
+﻿using Entidades;
+using System.ComponentModel.DataAnnotations;
 
-namespace Servicos.DTO
+namespace Servicos.DTO.AddRequests
 {
     /// <summary>
     /// Representa um DTO para adicionar um novo endereço.
