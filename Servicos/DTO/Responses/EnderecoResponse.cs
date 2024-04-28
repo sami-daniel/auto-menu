@@ -80,8 +80,8 @@ namespace Servicos.DTO.Responses
         /// <param name="endereco">O objeto Endereco a ser convertido.</param>
         /// <returns>O objeto EnderecoResponse correspondente.</returns>
         public static EnderecoResponse ToEnderecoResponse(this Endereco endereco) =>
-            new EnderecoResponse(iDEndereco: endereco.IDEndereco,
-                                 uF: endereco.UF,
+            new EnderecoResponse(iDEndereco: endereco.IdEndereco,
+                                 uF: endereco.Uf,
                                  cidade: endereco.Cidade,
                                  bairro: endereco.Bairro,
                                  logradouro: endereco.Logradouro,

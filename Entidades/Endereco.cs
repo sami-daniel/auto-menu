@@ -2,9 +2,9 @@
 
 public partial class Endereco
 {
-    public int IDEndereco { get; set; }
+    public int IdEndereco { get; set; }
 
-    public string UF { get; set; } = null!;
+    public string Uf { get; set; } = null!;
 
     public string Cidade { get; set; } = null!;
 
