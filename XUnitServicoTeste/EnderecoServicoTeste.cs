@@ -14,7 +14,7 @@ namespace XUnitServicoTeste
 
         [Fact]
         // O objeto EnderecoAddRequest não pode ser nulo ao passar como argumento para o metodo AddEndereco
-        public async Task AddEnderecoAsync_EnderecoAddRequest()
+        public async Task AddEnderecoAsync_EnderecoAddRequestNulo()
         {
             //Arrange
             EnderecoAddRequest? enderecoAddRequest = null;
