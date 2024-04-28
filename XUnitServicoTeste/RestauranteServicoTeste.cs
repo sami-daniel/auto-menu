@@ -55,7 +55,7 @@ namespace XUnitServicoTeste
                 Email = "restaurante@gmail.com",
                 Nome = "Comidas Delicosas E Sabor",
                 Senha = "Amaads@S1234!",
-                FkIdEndereco = _enderecoServico.GetAllEnderecos().First(endereco => endereco.IDEndereco == 0).IDEndereco
+                FkIdEndereco = _enderecoServico.GetAllEnderecos().First(endereco => endereco.IDEndereco == 1).IDEndereco
             };
             //Act
             var response_addrestaurante = await _restauranteServico.AddRestauranteAsync(restauranteAddRequest);
