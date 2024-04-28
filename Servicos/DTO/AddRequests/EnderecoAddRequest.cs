@@ -8,13 +8,14 @@ namespace Servicos.DTO.AddRequests
     /// </summary>
     public class EnderecoAddRequest
     {
+        private string uF;
 #pragma warning disable CS8618
         /// <summary>
         /// Obtém ou define a sigla do estado.
         /// </summary>
         [Required(ErrorMessage = "A sigla do estado é obrigatória.")]
         [StringLength(2, MinimumLength = 2, ErrorMessage = "A sigla do estado deve ter 2 caracteres.")]
-        public string UF { get; set; }
+        public string UF { get => uF; set => uF = value.ToUpper(); }
 
         /// <summary>
         /// Obtém ou define o nome da cidade.
@@ -46,7 +47,6 @@ namespace Servicos.DTO.AddRequests
         /// <summary>
         /// Obtém ou define o complemento do endereço.
         /// </summary>
-        [Required(ErrorMessage = "O complemento do endereço é obrigatório.")]
         [StringLength(100, ErrorMessage = "O complemento do endereço não pode exceder 100 caracteres.")]
         public string Complemento { get; set; }
         /// <summary>
@@ -59,6 +59,7 @@ namespace Servicos.DTO.AddRequests
             Uf = UF,
             Cidade = Cidade,
             Bairro = Bairro,
+            Logradouro = Logradouro,
             Numero = Numero,
             Complemento = Complemento
         };
