@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "project-name", "project-name.csproj", "{2794CE55-D4F7-4EFF-9301-AA8F5FABF7AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMenu", "AutoMenu.csproj", "{2794CE55-D4F7-4EFF-9301-AA8F5FABF7AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "..\Entidades\Entidades.csproj", "{30070566-5062-4844-924C-BA20FE8A7D3C}"
 EndProject
