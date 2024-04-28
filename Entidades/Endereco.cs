@@ -2,7 +2,7 @@
 
 public partial class Endereco
 {
-    public int IdEndereco { get; set; }
+    public int IDEndereco { get; set; }
 
     public string UF { get; set; } = null!;
 
