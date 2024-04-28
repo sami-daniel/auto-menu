@@ -25,6 +25,21 @@ namespace XUnitServicoTeste
                 await _restauranteServico.AddRestauranteAsync(restauranteAddRequest!);
             });
         }
-        
+        [Fact]
+        // O restaurante a ser adicionado nao pode conter informacoes invalidas
+        public async Task AddRestauranteAsync_RestauranteAddRequestInvalido()
+        {
+            //Act
+            var restauranteAddRequest = new RestauranteAddRequest()
+            {
+                CNPJ = "sdasdasd@31212 a", //CNPJ no formato invalido
+            };
+            //Assert
+            await Assert.ThrowsAsync<ArgumentException>(async () =>
+            {
+                //act
+                await _restauranteServico.AddRestauranteAsync(restauranteAddRequest);
+            });
+        }
     }
 }
