@@ -10,14 +10,14 @@
 
     <div id="Etapa-1">
         <div class="format">
-            <label for="cnpj">Cnpj:</label>
-            <input type="text" id="cnpj" name="cnpj" />
+            <label asp-for="RestauranteAddRequest.CNPJ">Cnpj:</label>
+            <input asp-for="RestauranteAddRequest.CNPJ" />
             <span></span>
         </div>
 
         <div class="format">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" />
+            <label asp-for="RestauranteAddRequest.Nome">Nome</label>
+            <input asp-for="RestauranteAddRequest.Nome" />
             <span></span>
         </div>
         <button type="button" onclick="voltar_etapa1()">Voltar</button>
@@ -26,8 +26,8 @@
 
     <div id="Etapa-2" style="display: none">
         <div class="format">
-            <label for="uf">UF:</label>
-            <select id="uf" name="uf">
+            <label asp-for="EnderecoAddRequest.UF">UF:</label>
+            <select asp-for="EnderecoAddRequest.UF">
                 <option value="MG" selected>MG</option>
                 <option value="RJ">RJ</option>
                 <option value="SP">SP</option>
@@ -60,32 +60,32 @@
         </div>
 
         <div class="format">
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" />
+            <label asp-for="EnderecoAddRequest.Cidade">Cidade:</label>
+            <input asp-for="EnderecoAddRequest.Cidade" />
             <span></span>
         </div>
 
         <div class="format">
-            <label for="bairro">Bairo:</label>
-            <input type="text" id="bairro" name="bairro" />
+            <label asp-for="EnderecoAddRequest.Bairro">Bairo:</label>
+            <input asp-for="EnderecoAddRequest.Bairro" />
             <span></span>
         </div>
 
         <div class="format">
-            <label for="logradouro">Logradouro:</label>
-            <input type="text" id="logradouro" name="logradouro" />
+            <label asp-for="EnderecoAddRequest.Logradouro">Logradouro:</label>
+            <input asp-for="EnderecoAddRequest.Logradouro" />
             <span></span>
         </div>
 
         <div class="format">
-            <label for="numero">Numero:</label>
-            <input type="text" id="numero" name="numero" />
+            <label asp-for="EnderecoAddRequest.Numero">Numero:</label>
+            <input asp-for="EnderecoAddRequest.Numero" />
             <span></span>
         </div>
 
         <div class="format">
-            <label for="complemento ">Complemento :</label>
-            <input type="text" id="complemento " name="complemento " />
+            <label asp-for="EnderecoAddRequest.Complemento">Complemento :</label>
+            <input asp-for="EnderecoAddRequest.Complemento" />
             <span></span>
         </div>
 
@@ -96,14 +96,14 @@
 
     <div id="Etapa-3" style="display: none">
         <div class="format">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" />
+            <label asp-for="RestauranteAddRequest.Email">Email:</label>
+            <input asp-for="RestauranteAddRequest.Email" />
             <span></span>
         </div>
 
         <div class="format">
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" />
+            <label asp-for="RestauranteAddRequest.Senha">Senha:</label>
+            <input asp-for="RestauranteAddRequest.Email" />
             <span></span>
         </div>
 
