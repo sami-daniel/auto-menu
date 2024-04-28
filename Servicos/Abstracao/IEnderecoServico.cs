@@ -13,6 +13,6 @@ namespace Servicos.Abstracao
         /// </summary>
         /// <param name="enderecoAddRequest">Os dados do novo endereço a serem adicionados.</param>
         /// <returns>A resposta do endereço adicionado.</returns>
-        EnderecoResponse AddEndereco(EnderecoAddRequest enderecoAddRequest);
+        Task<EnderecoResponse> AddEnderecoAsync(EnderecoAddRequest enderecoAddRequest);
     }
 }
