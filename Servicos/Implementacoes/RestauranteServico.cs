@@ -21,7 +21,14 @@ namespace Servicos.Implementacoes
 
         public IEnumerable<RestauranteResponse> GetAllRestaurantes()
         {
-            throw new NotImplementedException();
+            List<RestauranteResponse> restauranteResponses = new List<RestauranteResponse>();
+
+            foreach(var item in _db.Restaurantes) 
+            {
+                restauranteResponses.Add(item.ToRestauranteResponse());
+            }
+
+            return restauranteResponses;
         }
     }
 }
