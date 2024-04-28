@@ -47,8 +47,6 @@ namespace Servicos.DTO.AddRequests
         /// <summary>
         /// Obtém ou define o ID do endereço do restaurante.
         /// </summary>
-        [Required(ErrorMessage = "O ID do endereço é obrigatório.")]
-        [Display(Name = "ID do Endereço")]
         public int FkIdEndereco { get; set; }
 
         /// <summary>
