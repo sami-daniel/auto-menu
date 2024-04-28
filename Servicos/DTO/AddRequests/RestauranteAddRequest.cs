@@ -43,7 +43,7 @@ namespace Servicos.DTO.AddRequests
 #pragma warning restore CS8618
         public Restaurante ToRestaurante() => new Restaurante()
         {
-            Cnpj = Cnpj,
+            Cnpj = CNPJ,
             Nome = Nome,
             Email = Email,
             HashSenha = HasherSenha.HashearSenha(Senha),
