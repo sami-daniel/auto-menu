@@ -9,7 +9,7 @@ namespace project_name
             builder.Services.AddControllersWithViews();
             //cria o WebApplication
             var app = builder.Build();
-            //habilita os middlewares para lidar com certas requisições
+            //habilita os middlewares para lidar com certas requisiï¿½ï¿½es
             app.UseStaticFiles();
             app.UseRouting();
 
