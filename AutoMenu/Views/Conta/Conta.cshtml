@@ -1,9 +1,9 @@
 
     <div class="escolha-button">
-      <button id="cadastro" onclick="btncadastro">Cadastro</button>
-      <button id="logar" onclick="btnlogar">Logar</button>
+      <button id="cadastro" onclick="btncadastro()">Cadastro</button>
+      <button id="logar" onclick="btnlogar()">Logar</button>
     </div>
-    <form class="form-cadastro" action="">
+    <form id="form-cadastro" action="" style="display: none;">
       <div class="Etapa-1">
         <div class="format">
           <label for="cnpj">Cnpj:</label>
@@ -98,12 +98,13 @@
             <span></span>
         </div>
 
-    <button type="submit"></button>
+    <button>voltar</button>
+    <button type="submit">Cadastrar</button>
     </div>
 
     </form>
 
- <form class="form-login" action="">
+ <form id="form-login" action="" style="display: none;">
         <div class="format">
             <label for="cnpj-login">Cnpj:</label>
             <input type="text" id="cnpj-login" name="cnpj-login" />
@@ -115,7 +116,9 @@
             <input type="password" id="senha-login" name="senha-login" />
             <span></span>
         </div>
-        <button type="submit"></button>
+
+        <button>voltar</button>
+        <button type="submit">Logar</button>
  </form>
 
     <script src="~/Conta.js"></script>
