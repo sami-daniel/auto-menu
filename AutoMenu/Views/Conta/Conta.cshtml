@@ -1,130 +1,132 @@
 
-    <div id="escolha-button">
-      <button type="button" id="cadastro" onclick="btncadastro()">Cadastro</button>
-      <button type="button" id="logar" onclick="btnlogar()">Logar</button>
-    </div>
-    <form id="form-cadastro" action="" style="display: none">
+<div id="escolha-button">
+    <button type="button" id="cadastro" onclick="btncadastro()">Cadastro</button>
+    <button type="button" id="logar" onclick="btnlogar()">Logar</button>
+</div>
+<form id="form-cadastro" action="" style="display: none">
 
-      <div id="Etapa-1">
+    <div id="Etapa-1">
         <div class="format">
-          <label for="cnpj">Cnpj:</label>
-          <input type="text" id="cnpj" name="cnpj" />
-          <span></span>
+            <label for="cnpj">Cnpj:</label>
+            <input type="text" id="cnpj" name="cnpj" />
+            <span></span>
         </div>
 
         <div class="format">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" />
-          <span></span>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" />
+            <span></span>
         </div>
         <button type="button" onclick="voltar_etapa1()">Voltar</button>
         <button type="button" onclick="mostraretapa2()">Proxima</button>
-      </div>
+    </div>
 
-      <div id="Etapa-2" style="display: none">
+    <div id="Etapa-2" style="display: none">
         <div class="format">
-          <label for="uf">UF:</label>
-          <select id="uf" name="uf">
-            <option value="MG" selected>MG</option>
-            <option value="RJ">RJ</option>
-            <option value="SP">SP</option>
-            <option value="DF">DF</option>
-            <option value="GO">GO</option>
-            <option value="PR">PR</option>
-            <option value="PA">PA</option>
-            <option value="RR">RR</option>
-            <option value="BA">BA</option>
-            <option value="SC">SC</option>
-            <option value="RS">RS</option>
-            <option value="AC">AC</option>
-            <option value="AM">AM</option>
-            <option value="RO">RO</option>
-            <option value="AP">AP</option>
-            <option value="MA">MA</option>
-            <option value="MS">MS</option>
-            <option value="CE">CE</option>
-            <option value="MT">MT</option>
-            <option value="PI">PI</option>
-            <option value="RN">RN</option>
-            <option value="PB">PB</option>
-            <option value="PE">PE</option>
-            <option value="AL">AL</option>
-            <option value="SE">SE</option>
-            <option value="TO">TO</option>
-            <option value="ES">ES</option>
-          </select>
-          <span></span>
+            <label for="uf">UF:</label>
+            <select id="uf" name="uf">
+                <option value="MG" selected>MG</option>
+                <option value="RJ">RJ</option>
+                <option value="SP">SP</option>
+                <option value="DF">DF</option>
+                <option value="GO">GO</option>
+                <option value="PR">PR</option>
+                <option value="PA">PA</option>
+                <option value="RR">RR</option>
+                <option value="BA">BA</option>
+                <option value="SC">SC</option>
+                <option value="RS">RS</option>
+                <option value="AC">AC</option>
+                <option value="AM">AM</option>
+                <option value="RO">RO</option>
+                <option value="AP">AP</option>
+                <option value="MA">MA</option>
+                <option value="MS">MS</option>
+                <option value="CE">CE</option>
+                <option value="MT">MT</option>
+                <option value="PI">PI</option>
+                <option value="RN">RN</option>
+                <option value="PB">PB</option>
+                <option value="PE">PE</option>
+                <option value="AL">AL</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+                <option value="ES">ES</option>
+            </select>
+            <span></span>
         </div>
 
         <div class="format">
-          <label for="cidade">Cidade:</label>
-          <input type="text" id="cidade" name="cidade" />
-          <span></span>
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" />
+            <span></span>
         </div>
 
         <div class="format">
-          <label for="bairro">Bairo:</label>
-          <input type="text" id="bairro" name="bairro" />
-          <span></span>
+            <label for="bairro">Bairo:</label>
+            <input type="text" id="bairro" name="bairro" />
+            <span></span>
         </div>
 
         <div class="format">
-          <label for="logradouro">Logradouro:</label>
-          <input type="text" id="logradouro" name="logradouro" />
-          <span></span>
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" name="logradouro" />
+            <span></span>
         </div>
 
         <div class="format">
-          <label for="numero">Numero:</label>
-          <input type="text" id="numero" name="numero" />
-          <span></span>
+            <label for="numero">Numero:</label>
+            <input type="text" id="numero" name="numero" />
+            <span></span>
         </div>
 
         <div class="format">
-          <label for="complemento ">Complemento :</label>
-          <input type="text" id="complemento " name="complemento " />
-          <span></span>
+            <label for="complemento ">Complemento :</label>
+            <input type="text" id="complemento " name="complemento " />
+            <span></span>
         </div>
 
-        <button type="button" onclick="voltar_etapa2()" >Voltar</button>
+        <button type="button" onclick="voltar_etapa2()">Voltar</button>
         <button type="button" onclick="mostraretapa3()">Proxima</button>
 
-      </div>
+    </div>
 
-      <div id="Etapa-3" style="display: none">
+    <div id="Etapa-3" style="display: none">
         <div class="format">
-          <label for="email">Email:</label>
-          <input type="text" id="email" name="email" />
-          <span></span>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" />
+            <span></span>
         </div>
 
         <div class="format">
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha" />
-          <span></span>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" />
+            <span></span>
         </div>
 
         <button type="button" onclick="voltar_etapa3()">voltar</button>
         <button type="submit">Cadastrar</button>
-      </div>
-    </form>
+    </div>
+</form>
 
-    <form id="form-login" action="" style="display: none">
-      <div class="format">
+<form id="form-login" action="" style="display: none">
+    <div class="format">
         <label for="cnpj-login">Cnpj:</label>
         <input type="text" id="cnpj-login" name="cnpj-login" />
         <span></span>
-      </div>
+    </div>
 
-      <div class="format">
+    <div class="format">
         <label for="senha-login">Senha:</label>
         <input type="password" id="senha-login" name="senha-login" />
         <span></span>
-      </div>
+    </div>
 
-      <button type="button" onclick="voltar_login()">voltar</button>
-      <button type="submit">Logar</button>
-    </form>
+    <button type="button" onclick="voltar_login()">voltar</button>
+    <button type="submit">Logar</button>
+</form>
 
 
+@section scripts {
     <script src="~/Conta.js"></script>
+}
