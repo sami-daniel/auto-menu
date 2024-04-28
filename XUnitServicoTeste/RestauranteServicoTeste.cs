@@ -73,5 +73,24 @@ namespace XUnitServicoTeste
                 await _restauranteServico.AddRestauranteAsync(restauranteAddRequest1);
             });
         }
+        [Fact]
+        // O restaurante a ser adicionado não pode existir
+        public async Task AddRestauranteAsync_RestauranteAddRequestAdicionadoCorretamente()
+        {
+            //Assert
+            var restauranteAddRequest = new RestauranteAddRequest()
+            {
+                CNPJ = "12.345.678/0001-90",
+                Email = "restaurante@gmail.com",
+                Nome = "Comidas Delicosas E Sabor",
+                Senha = "Amaads@S1234!",
+                FkIdEndereco = _enderecoServico.GetAllEnderecos().First(endereco => endereco.IDEndereco == 0).IDEndereco
+            };
+            //Act
+            var response_addrestaurante = await _restauranteServico.AddRestauranteAsync(restauranteAddRequest);
+            var restaurante = _restauranteServico.GetAllRestaurantes();
+            //Assert
+            Assert.Contains(response_addrestaurante, restaurante);
+        }
     }
 }
