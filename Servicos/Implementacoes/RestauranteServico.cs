@@ -2,6 +2,7 @@
 using Servicos.Abstracao;
 using Servicos.DTO.AddRequests;
 using Servicos.DTO.Responses;
+using Servicos.Helpers;
 
 namespace Servicos.Implementacoes
 {
@@ -14,9 +15,16 @@ namespace Servicos.Implementacoes
             _db = new AutomenuDbContext();
         }
 
-        public Task<RestauranteResponse> AddRestauranteAsync(RestauranteAddRequest restauranteAddRequest)
+        public async Task<RestauranteResponse> AddRestauranteAsync(RestauranteAddRequest restauranteAddRequest)
         {
-            throw new NotImplementedException();
+            if (restauranteAddRequest == null) throw new ArgumentNullException(nameof(restauranteAddRequest));
+            if (!HelperValidacao.IsValido(restauranteAddRequest)) throw new ArgumentException("Restaurante invalido!");
+
+            var restauranteResponse = restauranteAddRequest.ToRestaurante();
+            await _db.Restaurantes.AddAsync(restauranteResponse);
+            await _db.SaveChangesAsync();
+
+            return restauranteResponse.ToRestauranteResponse();
         }
 
         public IEnumerable<RestauranteResponse> GetAllRestaurantes()
