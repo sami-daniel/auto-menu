@@ -15,6 +15,7 @@ namespace XUnitServicoTeste
             _restauranteServico = new RestauranteServico();
             _enderecoServico = new EnderecoServico();
         }
+        #region AddRestauranteAsyncXUnitTest
         [Fact]
         // O restaurante a ser adicionado nao pode ser nulo
         public async Task AddRestauranteAsync_RestauranteAddRequestNulo()
@@ -92,5 +93,6 @@ namespace XUnitServicoTeste
             //Assert
             Assert.Contains(response_addrestaurante, restaurante);
         }
+        #endregion
     }
 }
