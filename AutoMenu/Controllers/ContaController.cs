@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace project_name.Controllers
+namespace AutoMenu.Controllers
 {
     //Controlador HOME
     public class ContaController : Controller

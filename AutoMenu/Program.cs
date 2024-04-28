@@ -1,4 +1,4 @@
-namespace project_name
+namespace AutoMenu
 {
     public class Program
     {
