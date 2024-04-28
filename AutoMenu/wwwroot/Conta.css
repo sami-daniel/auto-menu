@@ -3,7 +3,7 @@
   margin: 0;
 }
 
-.escolha-button {
+#escolha-button {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,11 +17,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  border: solid green;
+  
 }
 
 #form-login {
-  display: none;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+ 
+}
+
+#Etapa-1 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -30,4 +39,22 @@
   border: solid green;
 }
 
+#Etapa-2 {
+ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border: solid green;
+}
 
+#Etapa-3 {
+ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border: solid green;
+}
