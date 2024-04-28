@@ -21,16 +21,10 @@ namespace Servicos.Implementacoes
 
             Endereco endereco = enderecoAddRequest.ToEndereco();
 
-            Task adicionar = Task.Run(async () =>
-            {
-                await _db.Enderecos.AddAsync(endereco);
-            });
-            await adicionar;
-            Task salvarMudancas = Task.Run(async () =>
-            {
-                await _db.SaveChangesAsync();
-            });
-            await salvarMudancas;
+
+            await _db.Enderecos.AddAsync(endereco);
+            await _db.SaveChangesAsync();
+
             return endereco.ToEnderecoResponse();
         }
 
@@ -44,6 +38,6 @@ namespace Servicos.Implementacoes
             }
 
             return enderecoResponses;
-        }       
+        }
     }
 }
