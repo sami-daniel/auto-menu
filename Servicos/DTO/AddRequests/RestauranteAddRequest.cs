@@ -2,7 +2,7 @@
 using Servicos.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace SeuNamespace.Aqui
+namespace Servicos.DTO.AddRequests
 {
     /// <summary>
     /// Classe que representa os dados de adição de um restaurante.
