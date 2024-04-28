@@ -4,7 +4,7 @@ public partial class Endereco
 {
     public int IdEndereco { get; set; }
 
-    public string Uf { get; set; } = null!;
+    public string UF { get; set; } = null!;
 
     public string Cidade { get; set; } = null!;
 
