@@ -1,17 +1,20 @@
 
-    <button onclick="Cadastro">Cadastro</button>
-    <button onclick="Logar">Logar</button>
-
-    <form action="">
+    <div class="escolha-button">
+      <button id="cadastro" onclick="btncadastro()">Cadastro</button>
+      <button id="logar" onclick="btnlogar()">Logar</button>
+    </div>
+    <form id="form-cadastro" action="" style="display: none;">
       <div class="Etapa-1">
         <div class="format">
           <label for="cnpj">Cnpj:</label>
           <input type="text" id="cnpj" name="cnpj" />
+          <span></span>
         </div>
 
         <div class="format">
           <label for="nome">Nome</label>
           <input type="text" id="nome" name="nome" />
+          <span></span>
         </div>
       </div>
 
@@ -47,13 +50,75 @@
             <option value="TO">TO</option>
             <option value="ES">ES</option>
           </select>
+          <span></span>
         </div>
 
         <div class="format">
             <label for="cidade">Cidade:</label>
             <input type="text" id="cidade" name="cidade" />
-          </div>
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label for="bairro">Bairo:</label>
+            <input type="text" id="bairro" name="bairro" />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" name="logradouro" />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label for="numero">Numero:</label>
+            <input type="text" id="numero" name="numero" />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label for="complemento ">Complemento :</label>
+            <input type="text" id="complemento " name="complemento " />
+            <span></span>
+        </div>
 
       </div>
+    
+    <div class="estapa-3">
+        <div class="format">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" />
+            <span></span>
+        </div>
+
+    <button>voltar</button>
+    <button type="submit">Cadastrar</button>
+    </div>
+
     </form>
+
+ <form id="form-login" action="" style="display: none;">
+        <div class="format">
+            <label for="cnpj-login">Cnpj:</label>
+            <input type="text" id="cnpj-login" name="cnpj-login" />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label for="senha-login">Senha:</label>
+            <input type="password" id="senha-login" name="senha-login" />
+            <span></span>
+        </div>
+
+        <button>voltar</button>
+        <button type="submit">Logar</button>
+ </form>
+
     <script src="~/Conta.js"></script>
