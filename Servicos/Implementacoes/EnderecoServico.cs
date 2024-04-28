@@ -6,7 +6,12 @@ namespace Servicos.Implementacoes
 {
     public class EnderecoServico : IEnderecoServico
     {
-        public EnderecoResponse AddEndereco(EnderecoAddRequest enderecoAddRequest)
+        public Task<EnderecoResponse> AddEnderecoAsync(EnderecoAddRequest enderecoAddRequest)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<EnderecoResponse>> GetAllEnderecosAsync()
         {
             throw new NotImplementedException();
         }
