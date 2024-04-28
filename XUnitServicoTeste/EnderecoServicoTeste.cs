@@ -60,7 +60,7 @@ namespace XUnitServicoTeste
             };
             //Assert
             var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddEnderecoAsync(enderecoAddRequest!);
-            var respostas_enderecos = await _enderecoServico.GetAllEnderecosAsync();
+            var respostas_enderecos = _enderecoServico.GetAllEnderecos();
             //Act
             Assert.Contains(resposta_enderecoServico_AddEndereco, respostas_enderecos);
         }
