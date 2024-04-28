@@ -14,7 +14,7 @@ namespace Servicos.DTO.AddRequests
         [StringLength(14, MinimumLength = 1, ErrorMessage = "O CNPJ deve ter entre 1 e 14 caracteres.")]
         [Display(Name = "CNPJ")]
         [RegularExpression(@"^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$", ErrorMessage = "O CNPJ não é válido!")]
-        public string Cnpj { get; set; }
+        public string CNPJ { get; set; }
 
         [Required(ErrorMessage = "O nome é obrigatório.")]
         [StringLength(80, MinimumLength = 1, ErrorMessage = "O nome deve ter entre 1 e 80 caracteres.")]

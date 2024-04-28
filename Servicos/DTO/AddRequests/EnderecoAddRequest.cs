@@ -14,7 +14,7 @@ namespace Servicos.DTO.AddRequests
         /// </summary>
         [Required(ErrorMessage = "A sigla do estado é obrigatória.")]
         [StringLength(2, MinimumLength = 2, ErrorMessage = "A sigla do estado deve ter 2 caracteres.")]
-        public string Uf { get; set; }
+        public string UF { get; set; }
 
         /// <summary>
         /// Obtém ou define o nome da cidade.
@@ -56,7 +56,7 @@ namespace Servicos.DTO.AddRequests
 #pragma warning restore CS8618
         public Endereco ToEndereco() => new Endereco()
         {
-            Uf = Uf,
+            Uf = UF,
             Cidade = Cidade,
             Bairro = Bairro,
             Numero = Numero,
