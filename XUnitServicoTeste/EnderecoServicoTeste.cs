@@ -1,18 +1,15 @@
 ﻿using Servicos.Abstracao;
 using Servicos.Implementacoes;
 using Servicos.DTO.AddRequests;
-using Xunit.Abstractions;
 
 namespace XUnitServicoTeste
 {
     public class EnderecoServicoTeste
     {
         private readonly IEnderecoServico _enderecoServico;
-        private readonly ITestOutputHelper _testOutputHelper;
-        public EnderecoServicoTeste(ITestOutputHelper testOutputHelper)
+        public EnderecoServicoTeste()
         {
             _enderecoServico = new EnderecoServico();
-            _testOutputHelper = testOutputHelper;
         }
 
         [Fact]
@@ -44,7 +41,7 @@ namespace XUnitServicoTeste
             {
                 //Act
                 var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddEnderecoAsync(enderecoAddRequest!);
-                
+
             });
         }
         [Fact]
