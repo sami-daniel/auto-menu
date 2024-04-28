@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Servicos.Helpers;
 using System.ComponentModel.DataAnnotations;
 
 namespace Servicos.DTO
@@ -45,7 +46,7 @@ namespace Servicos.DTO
             Cnpj = Cnpj,
             Nome = Nome,
             Email = Email,
-            HashSenha = Senha,
+            HashSenha = HasherSenha.HashearSenha(Senha),
             FkIdEndereco = FkIdEndereco
         };
     }
