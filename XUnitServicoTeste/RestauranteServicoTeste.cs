@@ -8,9 +8,11 @@ namespace XUnitServicoTeste
     public class RestauranteServicoTeste
     {
         private readonly IRestauranteServico _restauranteServico;
+        private readonly IEnderecoServico _enderecoServico;
         public RestauranteServicoTeste()
         {
             _restauranteServico = new RestauranteServico();
+            _enderecoServico = new EnderecoServico();
         }
         [Fact]
         // O restaurante a ser adicionado nao pode ser nulo
