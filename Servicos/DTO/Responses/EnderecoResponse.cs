@@ -67,6 +67,27 @@ namespace Servicos.DTO.Responses
         /// Obtém o complemento do endereço.
         /// </summary>
         public string Complemento { get; }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is null) return false;
+            if (obj.GetType() != typeof(EnderecoResponse)) return false;
+
+            var response = obj as EnderecoResponse;
+
+            return response.IDEndereco == IDEndereco
+                && response.UF == UF
+                && response.Cidade == Cidade 
+                && response.Bairro == Bairro
+                && response.Logradouro == Logradouro
+                && response.Numero == Numero
+                && response.Complemento == Complemento;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 
     /// <summary>
