@@ -41,6 +41,21 @@ namespace Servicos.DTO.Responses
         /// Obtém o ID do endereço associado ao restaurante.
         /// </summary>
         public int FkIdEndereco { get; }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is null) return false;
+            if (obj.GetType() != typeof(RestauranteResponse)) return false;
+
+            var response = obj as RestauranteResponse;
+
+            return response.Cnpj == Cnpj && response.Nome == Nome && response.Email == Email && FkIdEndereco == FkIdEndereco;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 
     /// <summary>
