@@ -15,9 +15,9 @@ namespace Servicos.Abstracao
         /// <returns>A resposta do endereço adicionado.</returns>
         Task<EnderecoResponse> AddEnderecoAsync(EnderecoAddRequest enderecoAddRequest);
         /// <summary>
-        /// Obtem todos os enderecos no Data Source de forma assincrona
+        /// Obtem todos os enderecos no Data Source de forma sincrona
         /// </summary>
         /// <returns>Todos os enderecos do Data Source</returns>
-        Task<IEnumerable<EnderecoResponse>> GetAllEnderecosAsync();
+        IEnumerable<EnderecoResponse> GetAllEnderecos();
     }
 }
