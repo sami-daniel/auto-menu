@@ -10,9 +10,9 @@ namespace Servicos.Implementacoes
     {
         private readonly AutomenuDbContext _db;
 
-        public RestauranteServico()
+        public RestauranteServico(AutomenuDbContext dbContext)
         {
-            _db = new AutomenuDbContext();
+            _db = dbContext;
         }
 
         public async Task<RestauranteResponse> AddRestauranteAsync(RestauranteAddRequest restauranteAddRequest)
