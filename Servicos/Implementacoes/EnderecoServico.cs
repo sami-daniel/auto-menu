@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Microsoft.EntityFrameworkCore;
 using Servicos.Abstracao;
 using Servicos.DTO.AddRequests;
 using Servicos.DTO.Responses;
@@ -9,9 +10,9 @@ namespace Servicos.Implementacoes
     public class EnderecoServico : IEnderecoServico
     {
         private readonly AutomenuDbContext _db;
-        public EnderecoServico()
+        public EnderecoServico(AutomenuDbContext dbContext)
         {
-            _db = new AutomenuDbContext();
+            _db = dbContext;
         }
 
         public async Task<EnderecoResponse> AddEnderecoAsync(EnderecoAddRequest enderecoAddRequest)
