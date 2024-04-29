@@ -58,3 +58,9 @@
   width: 50%;
   border: solid green;
 }
+
+
+.format{
+
+  display: grid;
+}

@@ -31,13 +31,32 @@ function btnlogar() {
 }
 
 function mostraretapa2() {
+  var nome = document.getElementById("nome").value.trim();
+  var span_nome = document.getElementById("erro-nome");
+
+
+  var Cnpj = document.getElementById("cnpj").value.trim();
+  var span_cnpj = document.getElementById("erro-cnpj");
+
+  var cnpjPattern = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
+
+if (!cnpjPattern.test(Cnpj) && Cnpj === "" 
+                   || 
+      nome.length <= 100 && nome === "") {
+
+  span_cnpj.textContent = "CNPJ inválido ou vazio.";
+  span_nome.textContent = "Nome deve ter até 100 caracteres e não pode ser vazio.";
+ 
+}else{
   if (etapa2.style.display === "none") {
-    etapa1.style.display = 'none';
-    etapa2.style.display = 'grid';
+    etapa1.style.display = "none";
+    etapa2.style.display = "grid";
   } else {
-    etapa2.style.display = 'none';
-    etapa1.style.display = 'grid';
+    etapa2.style.display = "none";
+    etapa1.style.display = "grid";
   }
+
+}
 }
 
 function mostraretapa3() {

@@ -11,14 +11,14 @@
     <div id="Etapa-1">
         <div class="format">
             <label asp-for="RestauranteAddRequest.CNPJ">Cnpj:</label>
-            <input asp-for="RestauranteAddRequest.CNPJ"/>
-            <span asp-validation-for="RestauranteAddRequest.CNPJ"></span>
+            <input asp-for="RestauranteAddRequest.CNPJ" id="cnpj"/>
+            <span asp-validation-for="RestauranteAddRequest.CNPJ" class="erro-text" id="erro-cnpj"></span>
         </div>
 
         <div class="format">
             <label asp-for="RestauranteAddRequest.Nome">Nome</label>
-            <input asp-for="RestauranteAddRequest.Nome" />
-            <span asp-validation-for="RestauranteAddRequest.Nome"></span>
+            <input asp-for="RestauranteAddRequest.Nome"  id="nome"/>
+            <span asp-validation-for="RestauranteAddRequest.Nome" class="erro-text" id="erro-nome"></span>
         </div>
         <button type="button" onclick="voltar_etapa1()">Voltar</button>
         <button type="button" onclick="mostraretapa2()">Proxima</button>
