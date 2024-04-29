@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace AutoMenu.Controllers
 {
     //Controlador HOME
+    [Controller]
+    [Route("[controller]")]
     public class ContaController : Controller
     {
         public IActionResult Conta()
