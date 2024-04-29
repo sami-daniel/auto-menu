@@ -1,6 +1,7 @@
 ﻿using Servicos.Abstracao;
 using Servicos.Implementacoes;
 using Servicos.DTO.AddRequests;
+using Entidades;
 
 namespace XUnitServicoTeste
 {
@@ -9,7 +10,7 @@ namespace XUnitServicoTeste
         private readonly IEnderecoServico _enderecoServico;
         public EnderecoServicoTeste()
         {
-            _enderecoServico = new EnderecoServico();
+            _enderecoServico = new EnderecoServico(new AutomenuDbContext());
         }
         #region AddEnderecoAsyncXUnitTest
         [Fact]

@@ -1,4 +1,5 @@
-﻿using Servicos.Abstracao;
+﻿using Entidades;
+using Servicos.Abstracao;
 using Servicos.DTO.AddRequests;
 using Servicos.Implementacoes;
 using Xunit.Sdk;
@@ -11,8 +12,8 @@ namespace XUnitServicoTeste
         private readonly IEnderecoServico _enderecoServico;
         public RestauranteServicoTeste()
         {
-            _restauranteServico = new RestauranteServico();
-            _enderecoServico = new EnderecoServico();
+            _restauranteServico = new RestauranteServico(new AutomenuDbContext());
+            _enderecoServico = new EnderecoServico(new AutomenuDbContext());
         }
         #region AddRestauranteAsyncXUnitTest
         [Fact]
