@@ -6,7 +6,7 @@
     <button type="button" id="cadastro" onclick="btncadastro()">Cadastro</button>
     <button type="button" id="logar" onclick="btnlogar()">Logar</button>
 </div>
-<form id="form-cadastro" asp-controller="Conta" asp-action="Create" style="display: none">
+<form id="form-cadastro" style="display: none">
 
     <div id="Etapa-1">
         <div class="format">
@@ -109,7 +109,6 @@
         <button type="button" onclick="voltar_etapa3()">voltar</button>
         <button type="submit">Cadastrar</button>
     </div>
-    <div asp-validation-summary="All"></div>
 </form>
 
 <form id="form-login" action="" style="display: none">
