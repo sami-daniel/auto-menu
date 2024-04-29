@@ -7,23 +7,23 @@
 </div>
 <form id="form-cadastro" style="display: none">
 
-    <div id="Etapa-1" class="logar-forms">
+    <div id="Etapa-1" class="forms-login">
         <div class="format">
-            <label>Cnpj:</label>
+            <label>CNPJ:</label>
             <input id="cnpj"/>
             <span class="erro-text" id="erro-cnpj"></span>
         </div>
 
         <div class="format">
-            <label>Nome</label>
+            <label>Name</label>
             <input id="nome"/>
             <span class="erro-text" id="erro-nome"></span>
         </div>
-        <button type="button" onclick="voltar_etapa1()">Voltar</button>
-        <button type="button" onclick="mostraretapa2()">Proxima</button>
+        <button type="button" onclick="voltar_etapa1()" class="buttons">Voltar</button>
+        <button type="button" onclick="mostraretapa2()" class="buttons">Proxima</button>
     </div>
 
-    <div id="Etapa-2" style="display: none" class="logar-forms">
+    <div id="Etapa-2" style="display: none" class="forms-login">
         <div class="format">
             <label>UF:</label>
             <select>
@@ -55,41 +55,41 @@
                 <option value="TO">TO</option>
                 <option value="ES">ES</option>
             </select>
-            <span asp-val></span>
+            <span></span>
         </div>
 
         <div class="format">
-            <label >Cidade:</label>
+            <label >City:</label>
             <input  />
             <span></span>
         </div>
 
         <div class="format">
-            <label >Bairo:</label>
-            <input  />
-            <span></span>
-        </div>
-
-        <div class="format">
-            <label>Logradouro:</label>
+            <label>District:</label>
             <input />
             <span></span>
         </div>
 
         <div class="format">
-            <label>Numero:</label>
+            <label>Address:</label>
             <input />
             <span></span>
         </div>
 
         <div class="format">
-            <label>Complemento :</label>
+            <label>Number:</label>
             <input />
             <span></span>
         </div>
 
-        <button type="button" onclick="voltar_etapa2()">Voltar</button>
-        <button type="button" onclick="mostraretapa3()">Proxima</button>
+        <div class="format">
+            <label>Complement :</label>
+            <input />
+            <span></span>
+        </div>
+
+        <button class="buttons" type="button" onclick="voltar_etapa2()">Voltar</button>
+        <button class="buttons" type="button" onclick="mostraretapa3()">Proxima</button>
     </div>
 
     <div id="Etapa-3" style="display: none" class="logar-forms">
@@ -100,31 +100,31 @@
         </div>
 
         <div class="format">
-            <label>Senha:</label>
+            <label>Password:</label>
             <input />
             <span></span>
         </div>
 
-        <button type="button" onclick="voltar_etapa3()">voltar</button>
-        <button type="submit">Cadastrar</button>
+        <button class="buttons" type="button" onclick="voltar_etapa3()">voltar</button>
+        <button class="buttons" type="submit">Sign In</button>
     </div>
 </form>
 
 <form id="form-login" action="" style="display: none">
-    <div class="format">
-        <label for="cnpj-login">Cnpj:</label>
+    <div class="format" class="forms-login">
+        <label for="cnpj-login">CNPJ:</label>
         <input type="text" id="cnpj-login" name="cnpj-login" />
         <span></span>
     </div>
 
-    <div class="format">
-        <label for="senha-login">Senha:</label>
+    <div class="format" class="forms-login">
+        <label for="senha-login">Password:</label>
         <input type="password" id="senha-login" name="senha-login" />
         <span></span>
     </div>
 
-    <button type="button" onclick="voltar_login()">voltar</button>
-    <button type="submit">Logar</button>
+    <button class="buttons" type="button" onclick="voltar_login()">voltar</button>
+    <button class="buttons" type="submit">Logar</button>
 </form>
 
 
