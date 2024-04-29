@@ -1,3 +1,4 @@
+using Entidades;
 using Servicos.Abstracao;
 using Servicos.Implementacoes;
 
@@ -10,6 +11,7 @@ namespace AutoMenu
             //servicos
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<AutomenuDbContext>();
             builder.Services.AddScoped<IEnderecoServico, EnderecoServico>();
             builder.Services.AddScoped<IRestauranteServico, RestauranteServico>();
             //cria o WebApplication
