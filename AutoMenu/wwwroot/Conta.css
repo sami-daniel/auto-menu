@@ -52,7 +52,7 @@
 
     .forms-login {
         margin: 10% auto;
-        border: 2px solid black;
+        border: 2px solid #1298EE;
         border-radius: 10px;
         height: auto;
         width: 50%;
@@ -60,96 +60,24 @@
     }
 
 .buttons {
-    width: 50%;
+    width:25%;
     padding: 5px;
     color: #1298EE;
     background: transparent;
     border: 1px solid #1298EE;
     border-radius: 5px;
     font-size: 1.1em;
-    position: relative;
+    margin:2% auto;
     cursor: pointer;
-    transition: color .375s;
+    transition: .4s;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-    .back::after {
-    content: "Voltar";
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
-    background-color: #1298EE;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1em;
-    transition: color .375s, transform .375s;
-}
-    .next::after {
-    content: "Proxima";
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
-    background-color: #1298EE;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1em;
-    transition: color .375s, transform .375s;
-}
-    .login::after {
-    content: "Login";
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: white;
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-    transform: scaleX(0);
-    transform-origin: right;
-    background-color: #1298EE;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1em;
-    transition: color .375s, transform .375s;
-}
-
-    .back:hover::after {
-        transform: scaleX(1);
-        transform-origin: left;
-        color:white;
+    .buttons:not(:last-child) {
+        margin-top: 10%;
     }
-    .next:hover::after {
-        transform: scaleX(1);
-        transform-origin: left;
-        color:white;
-    }
-    .login:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-    color: white;
-}
-
-    .back:hover {
+    .buttons:hover {
+        background-color: #1298EE;
         color: white;
-    }
-
-    .next:hover{
-        color:white;
     }
 
 .inputs-forms {
