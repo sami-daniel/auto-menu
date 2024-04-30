@@ -16,5 +16,13 @@ namespace Services.Abstractions
         /// </summary>
         /// <returns>Collection of objects representing the registered restaurants.</returns>
         IEnumerable<RestaurantResponse> GetAllRestaurants();
+        /// <summary>
+        /// Retrieves a restaurant by its CNPJ number.
+        /// </summary>
+        /// <param name="CNPJ">The CNPJ number of the restaurant to retrieve.</param>
+        /// <returns>
+        /// An object representing the restaurant identified by the provided CNPJ number.
+        /// </returns>
+        RestaurantResponse GetRestaurantByCNPJ(string CNPJ);
     }
 }
