@@ -3,6 +3,7 @@
   margin: 0;
   list-style:none;
   text-decoration:none;
+  
 }
 
 #escolha-button {
@@ -12,93 +13,170 @@
   transform: translate(-50%, -50%);
 }
 
-#form-cadastro {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  
+.format {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+.format:nth-child(2){
+    margin-top:2%;
+}
+    .format:nth-child(3) {
+        margin-top: 2%;
+    }
+    .format:nth-child(4) {
+        margin-top: 2%;
+    }
+    .format:nth-child(5) {
+        margin-top: 2%;
+    }
+    .format:nth-child(6) {
+        margin-top: 2%;
+    }
+    .format:last-child{
+        margin-top:2%;
+    }
+    .content-forms {
+        padding: 50px;
+    }
+.content-forms > h1 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #1298EE;
 }
 
-#form-login {
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
- 
-}
+    
 
-.format{
 
-  display: grid;
-}
-
-.forms-login {
-    box-shadow: 4px 0px 12px black;
-    padding: 10px;
-    border: 1px dashed black;
-    border-radius: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-
-}
+    .forms-login {
+        margin: 10% auto;
+        border: 2px solid black;
+        border-radius: 10px;
+        height: auto;
+        width: 50%;
+        padding: 10px;
+    }
 
 .buttons {
     width: 50%;
     padding: 5px;
-    color: black;
+    color: #1298EE;
     background: transparent;
     border: 1px solid #1298EE;
     border-radius: 5px;
     font-size: 1.1em;
     position: relative;
     cursor: pointer;
-    
+    transition: color .375s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-    .buttons:first-child::after {
-        content: "Voltar";
-        color: white;
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
-        width: 100%;
-        height: 100%;
-        transform: scaleX(0);
-        transform-origin: right;
-        background-color: #1298EE;
-        text-align: center;
-        font-size: 1.1em;
-        transition: transform .4s;
+    .back::after {
+    content: "Voltar";
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: #1298EE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    transition: color .375s, transform .375s;
+}
+    .next::after {
+    content: "Proxima";
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: #1298EE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    transition: color .375s, transform .375s;
+}
+    .login::after {
+    content: "Login";
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: #1298EE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    transition: color .375s, transform .375s;
+}
+
+    .back:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+        color:white;
     }
-    .buttons:last-child::after {
-        content: "Proxima";
+    .next:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+        color:white;
+    }
+    .login:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    color: white;
+}
+
+    .back:hover {
         color: white;
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
-        width: 100%;
-        height: 100%;
-        transform: scaleX(0);
-        transform-origin: right;
-        background-color: #1298EE;
-        text-align: center;
-        font-size: 1.1em;
-        transition: transform .4s;
     }
 
-    .buttons:first-child:hover::after {
-        transform: scaleX(1);
-        transform-origin: left;
+    .next:hover{
+        color:white;
     }
-    .buttons:last-child:hover::after {
-        transform: scaleX(1);
-        transform-origin: left;
+
+.inputs-forms {
+    font-size: 1.1em;
+    border: none;
+    width: 75%;
+    border-bottom: 2px solid #1298EE;
+    padding: 2px;
+    color: #1298EE;
+    outline: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.label-forms {
+    font-size: 1.2em;
+    color: #1298EE;
+    letter-spacing: 1.4px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position:absolute;
+    top:5px;
+    left:13%;
+    pointer-events: none;
+    transition: .375s;
+}
+
+    .inputs-forms:focus~.label-forms,
+    .inputs-forms:valid~.label-forms{
+        font-size:0.75em;
+        top: -10px;
     }
