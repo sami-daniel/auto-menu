@@ -56,7 +56,7 @@ public partial class AutomenuDbContext : DbContext
                 .HasMaxLength(18)
                 .IsFixedLength()
                 .HasColumnName("CNPJ");
-            entity.Property(e => e.Email).HasMaxLength(50);
+            entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.FkAddressId).HasColumnName("Fk_Address_Id");
             entity.Property(e => e.Name).HasMaxLength(80);
             entity.Property(e => e.PasswordHash)

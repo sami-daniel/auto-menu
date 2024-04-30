@@ -1,5 +1,5 @@
-﻿using Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Entities;
 
 namespace Services.DTO.AddRequests
 {

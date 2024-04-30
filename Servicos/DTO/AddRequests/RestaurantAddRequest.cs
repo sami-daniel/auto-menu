@@ -31,7 +31,7 @@ namespace Services.DTO.AddRequests
         /// Gets or sets the email of the restaurant.
         /// </summary>
         [Required(ErrorMessage = "O email é obrigatório.")]
-        [StringLength(50, MinimumLength = 1, ErrorMessage = "O email deve ter entre 1 e 50 caracteres.")]
+        [StringLength(100, MinimumLength = 1, ErrorMessage = "O email deve ter entre 1 e 100 caracteres.")]
         [EmailAddress(ErrorMessage = "O email não é válido.")]
         [Display(Name = "Email")]
         public string Email { get; set; }
