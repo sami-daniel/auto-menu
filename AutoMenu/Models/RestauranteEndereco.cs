@@ -1,4 +1,4 @@
-﻿using Servicos.DTO.AddRequests;
+﻿using Services.DTO.AddRequests;
 
 namespace AutoMenu.Models
 {
@@ -7,7 +7,7 @@ namespace AutoMenu.Models
     /// </summary>
     public class RestauranteEndereco
     {
-        public RestauranteAddRequest RestauranteAddRequest { get; } = new RestauranteAddRequest();
-        public EnderecoAddRequest EnderecoAddRequest { get; } = new EnderecoAddRequest();
+        public RestaurantAddRequest RestauranteAddRequest { get; } = new RestaurantAddRequest();
+        public AddressAddRequest EnderecoAddRequest { get; } = new AddressAddRequest();
     }
 }

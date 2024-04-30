@@ -1,16 +1,16 @@
-﻿using Servicos.Abstracao;
-using Servicos.Implementacoes;
-using Servicos.DTO.AddRequests;
-using Entidades;
+﻿using Services.Abstracao;
+using Services.Implementacoes;
+using Services.DTO.AddRequests;
+using Entities;
 
 namespace XUnitServicoTeste
 {
-    public class EnderecoServicoTeste
+    public class AddressServiceTest
     {
-        private readonly IEnderecoServico _enderecoServico;
-        public EnderecoServicoTeste()
+        private readonly IAddressService _enderecoServico;
+        public AddressServiceTest()
         {
-            _enderecoServico = new EnderecoServico(new AutomenuDbContext());
+            _enderecoServico = new AddressService(new AutomenuDbContext());
         }
         #region AddEnderecoAsyncXUnitTest
         [Fact]
@@ -18,12 +18,12 @@ namespace XUnitServicoTeste
         public async Task AddEnderecoAsync_EnderecoAddRequestNulo()
         {
             //Arrange
-            EnderecoAddRequest? enderecoAddRequest = null;
+            AddressAddRequest? enderecoAddRequest = null;
             //Assert
             await Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
                 //Act
-                var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddEnderecoAsync(enderecoAddRequest!);
+                var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddAddressAsync(enderecoAddRequest!);
             });
         }
         [Fact]
@@ -31,17 +31,17 @@ namespace XUnitServicoTeste
         public async Task AddEnderecoAsync_EnderecoAddRequestInvalido()
         {
             //Arrange
-            EnderecoAddRequest? enderecoAddRequest = new EnderecoAddRequest()
+            AddressAddRequest? enderecoAddRequest = new AddressAddRequest()
             {
                 UF = "MG12131", //Nao pode conter mais de duas letras
-                Bairro = "", //Nao pode ser vazio
+                District = "", //Nao pode ser vazio
                 //Todas propriedades devem ser preenchidas
             };
             //Assert
             await Assert.ThrowsAsync<ArgumentException>(async () =>
             {
                 //Act
-                var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddEnderecoAsync(enderecoAddRequest!);
+                var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddAddressAsync(enderecoAddRequest!);
 
             });
         }
@@ -50,18 +50,18 @@ namespace XUnitServicoTeste
         public async Task AddEnderecoAsync_EnderecoAddRequestAdicionadoCorretamente()
         {
             //Arrange
-            EnderecoAddRequest? enderecoAddRequest = new EnderecoAddRequest()
+            AddressAddRequest? enderecoAddRequest = new AddressAddRequest()
             {
                 UF = "MG",
-                Bairro = "Alto Vera Cruz",
-                Cidade = "Belo Horizonte",
-                Complemento = "3 Andar",
-                Logradouro = "Rua dos Bobos Numero 0",
-                Numero = 555
+                District = "Alto Vera Cruz",
+                City = "Belo Horizonte",
+                Complement = "3 Andar",
+                Street = "Rua dos Bobos Numero 0",
+                Number = 555
             };
             //Assert
-            var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddEnderecoAsync(enderecoAddRequest!);
-            var respostas_enderecos = _enderecoServico.GetAllEnderecos();
+            var resposta_enderecoServico_AddEndereco = await _enderecoServico.AddAddressAsync(enderecoAddRequest!);
+            var respostas_enderecos = _enderecoServico.GetAllAddresses();
             //Act
             Assert.Contains(resposta_enderecoServico_AddEndereco, respostas_enderecos);
         }
