@@ -14,6 +14,7 @@ namespace AutoMenu
             builder.Services.AddDbContext<AutomenuDbContext>();
             builder.Services.AddScoped<IAddressService, AddressService>();
             builder.Services.AddScoped<IRestaurantService, RestaurantService>();
+            builder.Services.AddSession();
             //cria o WebApplication
             var app = builder.Build();
             //habilita os middlewares para lidar com certas requisi��es
