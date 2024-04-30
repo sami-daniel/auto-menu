@@ -39,9 +39,9 @@ namespace Services.Implementations
             return restauranteResponses;
         }
 
-        public RestaurantResponse GetRestaurantByCNPJ(string CNPJ)
+        public RestaurantResponse? GetRestaurantByCNPJ(string CNPJ)
         {
-            throw new NotImplementedException();
+            return _db.Restaurants.FirstOrd()
         }
     }
 }
