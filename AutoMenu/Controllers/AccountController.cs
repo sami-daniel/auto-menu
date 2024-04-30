@@ -24,12 +24,16 @@ namespace AutoMenu.Controllers
         }
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Create([FromForm]RestaurantAddRequest restaurantAddRequest, [FromForm]AddressAddRequest addressAddRequest)
+        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, IHostEnvironment hostEnvironment)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid && hostEnvironment.EnvironmentName == "Development")
             {
                 return BadRequest(ModelState); //Custom error page pra depois
             }
+            else if(!ModelState.IsValid)
+                return BadRequest(string.Join(',', ModelState.Values.SelectMany(value => value.Errors).Select(error => error.ErrorMessage)));
+
+
             var fk_address = await _addressService.AddAddressAsync(addressAddRequest);
             restaurantAddRequest.FkAddressId = fk_address.AddressID;
             await _restaurantService.AddRestaurantAsync(restaurantAddRequest);
