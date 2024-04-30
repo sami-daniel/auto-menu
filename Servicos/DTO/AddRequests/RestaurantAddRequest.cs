@@ -14,7 +14,7 @@ namespace Services.DTO.AddRequests
         /// Gets or sets the CNPJ of the restaurant.
         /// </summary>
         [Required(ErrorMessage = "O CNPJ é obrigatório.")]
-        [StringLength(14, MinimumLength = 1, ErrorMessage = "O CNPJ deve ter entre 1 e 14 caracteres.")]
+        [StringLength(18, MinimumLength = 18, ErrorMessage = "O CNPJ deve ter entre 1 e 18 caracteres.")]
         [Display(Name = "CNPJ")]
         [RegularExpression(@"^\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}$", ErrorMessage = "O CNPJ não é válido!")]
         public string CNPJ { get; set; }

@@ -5,29 +5,33 @@
     <button type="button" id="cadastro" onclick="btncadastro()">Cadastro</button>
     <button type="button" id="logar" onclick="btnlogar()">Logar</button>
 </div>
-<form id="form-cadastro" style="display: none">
-
-    <div id="Etapa-1" class="forms-login">
+<form id="form-cadastro" style="display: none" class="forms-login">
+    <div id="Etapa-1" class="content-forms" >
+        <h1>Cadastro</h1>
         <div class="format">
-            <label>CNPJ:</label>
-            <input id="cnpj"/>
+            <input class="inputs-forms" id="cnpj" required />
+            <label class="label-forms" >CNPJ</label>
             <span class="erro-text" id="erro-cnpj"></span>
         </div>
 
-        <div class="format">
-            <label>Name</label>
-            <input id="nome"/>
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" id="nome" required />
+            <label class="label-forms" >Name</label>
             <span class="erro-text" id="erro-nome"></span>
         </div>
-        <button type="button" onclick="voltar_etapa1()" class="buttons">Voltar</button>
-        <button type="button" onclick="mostraretapa2()" class="buttons">Proxima</button>
+        <button type="button" onclick="voltar_etapa1()" class="buttons back">Voltar</button>
+        <button type="button" onclick="mostraretapa2()" class="buttons next">Proxima</button>
     </div>
 
-    <div id="Etapa-2" style="display: none" class="forms-login">
-        <div class="format">
-            <label>UF:</label>
-            <select>
-                <option value="MG" selected>MG</option>
+    <div id="Etapa-2" style="display: none" class="content-forms">
+        <h1>Cadastro</h1>
+        <div class="format" style="margin-top:5%;">
+            
+            
+            <select class="inputs-forms" required>
+                <option value="" disabled selected></option>
+                <option value="MG">MG</option>
                 <option value="RJ">RJ</option>
                 <option value="SP">SP</option>
                 <option value="DF">DF</option>
@@ -55,76 +59,88 @@
                 <option value="TO">TO</option>
                 <option value="ES">ES</option>
             </select>
+            <label class="label-forms">UF</label>
             <span></span>
         </div>
 
-        <div class="format">
-            <label >City:</label>
-            <input  />
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" required />
+            <label class="label-forms">City</label>
             <span></span>
         </div>
 
-        <div class="format">
-            <label>District:</label>
-            <input />
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" required />
+            <label class="label-forms">District</label>
             <span></span>
         </div>
 
-        <div class="format">
-            <label>Address:</label>
-            <input />
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" required />
+            <label class="label-forms">Address</label>
             <span></span>
         </div>
 
-        <div class="format">
-            <label>Number:</label>
-            <input />
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" required />
+            <label class="label-forms">Number</label>
             <span></span>
         </div>
 
-        <div class="format">
-            <label>Complement :</label>
-            <input />
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" required />
+            <label class="label-forms">Complement</label>
             <span></span>
         </div>
 
-        <button class="buttons" type="button" onclick="voltar_etapa2()">Voltar</button>
-        <button class="buttons" type="button" onclick="mostraretapa3()">Proxima</button>
+        <button class="buttons back" type="button" onclick="voltar_etapa2()">Voltar</button>
+        <button class="buttons next" type="button" onclick="mostraretapa3()">Proxima</button>
     </div>
 
-    <div id="Etapa-3" style="display: none" class="logar-forms">
-        <div class="format">
-            <label>Email:</label>
-            <input />
+    <div id="Etapa-3" style="display: none" class="content-forms">
+        <h1>Cadastro</h1>
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" required  />
+            <label class="label-forms">Email</label>
             <spa></span>
         </div>
 
-        <div class="format">
-            <label>Password:</label>
-            <input />
+        <div class="format" style="margin-top:5%;">
+            
+            <input class="inputs-forms" required />
+            <label class="label-forms">Password</label>
             <span></span>
         </div>
 
-        <button class="buttons" type="button" onclick="voltar_etapa3()">voltar</button>
-        <button class="buttons" type="submit">Sign In</button>
+        <button class="buttons back" type="button" onclick="voltar_etapa3()">voltar</button>
+        <button class="buttons next" type="submit">Sign In</button>
     </div>
 </form>
 
-<form id="form-login" action="" style="display: none">
-    <div class="format" class="forms-login">
-        <label for="cnpj-login">CNPJ:</label>
-        <input type="text" id="cnpj-login" name="cnpj-login" />
+<form id="form-login" action="" style="display: none" class="forms-login">
+    <h1>Cadastro</h1>
+    <div class="format" class="forms-login" style="margin-top:5%;">
+        
+        <input class="inputs-forms" type="text" id="cnpj-login" name="cnpj-login" required />
+        <label class="label-forms" for="cnpj-login">CNPJ</label>
         <span></span>
     </div>
 
-    <div class="format" class="forms-login">
-        <label for="senha-login">Password:</label>
-        <input type="password" id="senha-login" name="senha-login" />
+    <div class="format" class="forms-login" style="margin-top:5%;">
+        
+        <input class="inputs-forms" type="password" id="senha-login" name="senha-login" required />
+        <label class="label-forms" for="senha-login">Password</label>
         <span></span>
     </div>
 
-    <button class="buttons" type="button" onclick="voltar_login()">voltar</button>
-    <button class="buttons" type="submit">Logar</button>
+    <button class="buttons back" type="button" onclick="voltar_login()">Voltar</button>
+    <button class="buttons login" type="submit">Login</button>
 </form>
 
 
