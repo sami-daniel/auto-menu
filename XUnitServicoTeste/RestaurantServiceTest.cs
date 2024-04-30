@@ -1,7 +1,7 @@
 ﻿using Entities;
 using Services.Abstractions;
 using Services.DTO.AddRequests;
-using Services.Implementacoes;
+using Services.Implementations;
 using Xunit.Sdk;
 
 namespace XUnitServicoTeste

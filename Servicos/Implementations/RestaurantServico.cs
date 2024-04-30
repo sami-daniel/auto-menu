@@ -4,7 +4,7 @@ using Services.DTO.AddRequests;
 using Services.DTO.Responses;
 using Services.Helpers;
 
-namespace Services.Implementacoes
+namespace Services.Implementations
 {
     public class RestaurantService : IRestaurantService
     {
@@ -37,6 +37,11 @@ namespace Services.Implementacoes
             }
 
             return restauranteResponses;
+        }
+
+        public RestaurantResponse GetRestaurantByCNPJ(string CNPJ)
+        {
+            throw new NotImplementedException();
         }
     }
 }
