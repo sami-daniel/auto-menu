@@ -60,7 +60,7 @@ namespace XUnitServicoTeste
             };
             //Act
             var response_addrestaurante = await _restauranteServico.AddRestaurantAsync(restauranteAddRequest);
-            var restaurante = _restauranteServico.GetAllRestaurants();
+            var restaurante = await _restauranteServico.GetAllRestaurantsAsync();
             //Assert
             Assert.Contains(response_addrestaurante, restaurante);
         }

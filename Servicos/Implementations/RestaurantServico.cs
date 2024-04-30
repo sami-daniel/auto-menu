@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Microsoft.EntityFrameworkCore;
 using Services.Abstractions;
 using Services.DTO.AddRequests;
 using Services.DTO.Responses;
@@ -27,21 +28,17 @@ namespace Services.Implementations
             return restauranteResponse.ToRestaurantResponse();
         }
 
-        public IEnumerable<RestaurantResponse> GetAllRestaurants()
+        public async Task<IEnumerable<RestaurantResponse>> GetAllRestaurantsAsync()
         {
-            List<RestaurantResponse> restauranteResponses = new List<RestaurantResponse>();
-
-            foreach(var item in _db.Restaurants) 
-            {
-                restauranteResponses.Add(item.ToRestaurantResponse());
-            }
-
-            return restauranteResponses;
+            var restaurants = await _db.Restaurants.ToListAsync();
+            return restaurants.Select(r => r.ToRestaurantResponse());
         }
 
-        public Task<RestaurantResponse?> GetRestaurantByCNPJ(string CNPJ)
+        public async Task<RestaurantResponse?> GetRestaurantByCNPJAsync(string CNPJ)
         {
-            throw new NotImplementedException();
+            var restaurant = await _db.Restaurants.FirstOrDefaultAsync(r => r.Cnpj == CNPJ);
+
+            return restaurant?.ToRestaurantResponse();
         }
     }
 }
