@@ -23,6 +23,6 @@ namespace Services.Abstractions
         /// <returns>
         /// An object representing the restaurant identified by the provided CNPJ number.
         /// </returns>
-        RestaurantResponse GetRestaurantByCNPJ(string CNPJ);
+        RestaurantResponse? GetRestaurantByCNPJ(string CNPJ);
     }
 }
