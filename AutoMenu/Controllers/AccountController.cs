@@ -24,9 +24,9 @@ namespace AutoMenu.Controllers
         }
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, IHostEnvironment hostEnvironment)
+        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, [FromServices]IConfiguration configuration)
         {
-            if (!ModelState.IsValid && hostEnvironment.EnvironmentName == "Development")
+            if (!ModelState.IsValid && configuration["environmentVariables:ASPNETCORE_ENVIRONMENT"] == "Development")
             {
                 return BadRequest(ModelState); //Custom error page pra depois
             }
