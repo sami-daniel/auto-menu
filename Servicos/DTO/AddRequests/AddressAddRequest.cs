@@ -8,13 +8,13 @@ namespace Services.DTO.AddRequests
     /// </summary>
     public class AddressAddRequest
     {
-        private string uF;
 #pragma warning disable CS8618
+        [Required(ErrorMessage = "A sigla do estado é obrigatória.")]
+        [StringLength(2, MinimumLength = 2, ErrorMessage = "A sigla do estado deve ter 2 caracteres.")]
+        private string uF;
         /// <summary>
         /// Gets or sets the state abbreviation.
         /// </summary>
-        [Required(ErrorMessage = "A sigla do estado é obrigatória.")]
-        [StringLength(2, MinimumLength = 2, ErrorMessage = "A sigla do estado deve ter 2 caracteres.")]
         public string UF { get => uF; set => uF = value.ToUpper(); }
 
         /// <summary>
