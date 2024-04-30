@@ -1,0 +1,133 @@
+
+
+
+<div id="escolha-button">
+    <button type="button" id="cadastro" onclick="btncadastro()">Cadastro</button>
+    <button type="button" id="logar" onclick="btnlogar()">Logar</button>
+</div>
+<form id="form-cadastro" style="display: none">
+
+    <div id="Etapa-1" class="forms-login">
+        <div class="format">
+            <label>CNPJ:</label>
+            <input id="cnpj"/>
+            <span class="erro-text" id="erro-cnpj"></span>
+        </div>
+
+        <div class="format">
+            <label>Name</label>
+            <input id="nome"/>
+            <span class="erro-text" id="erro-nome"></span>
+        </div>
+        <button type="button" onclick="voltar_etapa1()" class="buttons">Voltar</button>
+        <button type="button" onclick="mostraretapa2()" class="buttons">Proxima</button>
+    </div>
+
+    <div id="Etapa-2" style="display: none" class="forms-login">
+        <div class="format">
+            <label>UF:</label>
+            <select>
+                <option value="MG" selected>MG</option>
+                <option value="RJ">RJ</option>
+                <option value="SP">SP</option>
+                <option value="DF">DF</option>
+                <option value="GO">GO</option>
+                <option value="PR">PR</option>
+                <option value="PA">PA</option>
+                <option value="RR">RR</option>
+                <option value="BA">BA</option>
+                <option value="SC">SC</option>
+                <option value="RS">RS</option>
+                <option value="AC">AC</option>
+                <option value="AM">AM</option>
+                <option value="RO">RO</option>
+                <option value="AP">AP</option>
+                <option value="MA">MA</option>
+                <option value="MS">MS</option>
+                <option value="CE">CE</option>
+                <option value="MT">MT</option>
+                <option value="PI">PI</option>
+                <option value="RN">RN</option>
+                <option value="PB">PB</option>
+                <option value="PE">PE</option>
+                <option value="AL">AL</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+                <option value="ES">ES</option>
+            </select>
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label >City:</label>
+            <input  />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label>District:</label>
+            <input />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label>Address:</label>
+            <input />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label>Number:</label>
+            <input />
+            <span></span>
+        </div>
+
+        <div class="format">
+            <label>Complement :</label>
+            <input />
+            <span></span>
+        </div>
+
+        <button class="buttons" type="button" onclick="voltar_etapa2()">Voltar</button>
+        <button class="buttons" type="button" onclick="mostraretapa3()">Proxima</button>
+    </div>
+
+    <div id="Etapa-3" style="display: none" class="logar-forms">
+        <div class="format">
+            <label>Email:</label>
+            <input />
+            <spa></span>
+        </div>
+
+        <div class="format">
+            <label>Password:</label>
+            <input />
+            <span></span>
+        </div>
+
+        <button class="buttons" type="button" onclick="voltar_etapa3()">voltar</button>
+        <button class="buttons" type="submit">Sign In</button>
+    </div>
+</form>
+
+<form id="form-login" action="" style="display: none">
+    <div class="format" class="forms-login">
+        <label for="cnpj-login">CNPJ:</label>
+        <input type="text" id="cnpj-login" name="cnpj-login" />
+        <span></span>
+    </div>
+
+    <div class="format" class="forms-login">
+        <label for="senha-login">Password:</label>
+        <input type="password" id="senha-login" name="senha-login" />
+        <span></span>
+    </div>
+
+    <button class="buttons" type="button" onclick="voltar_login()">voltar</button>
+    <button class="buttons" type="submit">Logar</button>
+</form>
+
+
+@section scripts {
+    <script src="~/Conta.js"></script>
+}

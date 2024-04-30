@@ -2,12 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AutoMenu.Controllers
 {
-    //Controlador HOME
     [Controller]
     [Route("[controller]")]
-    public class ContaController : Controller
+    public class AccountController : Controller
     {
-        public IActionResult Conta()
+        public IActionResult Account()
         {
             // metodo IActionResult para a pagina index principal
             ViewBag.Css = "Conta.css";

@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  list-style:none;
+  text-decoration:none;
 }
 
 #escolha-button {
@@ -30,37 +32,73 @@
  
 }
 
-#Etapa-1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  border: solid green;
-}
-
-#Etapa-2 {
- 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  border: solid green;
-}
-
-#Etapa-3 {
- 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  border: solid green;
-}
-
-
 .format{
 
   display: grid;
 }
+
+.forms-login {
+    box-shadow: 4px 0px 12px black;
+    padding: 10px;
+    border: 1px dashed black;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+
+}
+
+.buttons {
+    width: 50%;
+    padding: 5px;
+    color: black;
+    background: transparent;
+    border: 1px solid #1298EE;
+    border-radius: 5px;
+    font-size: 1.1em;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+    .buttons:first-child::after {
+        content: "Voltar";
+        color: white;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        transform: scaleX(0);
+        transform-origin: right;
+        background-color: #1298EE;
+        text-align: center;
+        font-size: 1.1em;
+        transition: transform .4s;
+    }
+    .buttons:last-child::after {
+        content: "Proxima";
+        color: white;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        transform: scaleX(0);
+        transform-origin: right;
+        background-color: #1298EE;
+        text-align: center;
+        font-size: 1.1em;
+        transition: transform .4s;
+    }
+
+    .buttons:first-child:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    .buttons:last-child:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }

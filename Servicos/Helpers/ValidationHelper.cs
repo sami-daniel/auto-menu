@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Servicos.Helpers
+namespace Services.Helpers
 {
-    public static class HelperValidacao
+    public static class ValidationHelper
     {
         public static bool IsValido(object obj)
         {

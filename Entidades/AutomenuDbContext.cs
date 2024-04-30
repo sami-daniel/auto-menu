@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Entidades;
+namespace Entities;
 
 public partial class AutomenuDbContext : DbContext
 {
@@ -13,9 +13,9 @@ public partial class AutomenuDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Endereco> Enderecos { get; set; }
+    public virtual DbSet<Address> Addresses { get; set; }
 
-    public virtual DbSet<Restaurante> Restaurantes { get; set; }
+    public virtual DbSet<Restaurant> Restaurants { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -27,55 +27,46 @@ public partial class AutomenuDbContext : DbContext
             .UseCollation("utf8mb4_0900_ai_ci")
             .HasCharSet("utf8mb4");
 
-        modelBuilder.Entity<Endereco>(entity =>
+        modelBuilder.Entity<Address>(entity =>
         {
-            entity.HasKey(e => e.IdEndereco).HasName("PRIMARY");
+            entity.HasKey(e => e.IdAddress).HasName("PRIMARY");
 
-            entity.ToTable("endereco");
+            entity.ToTable("address");
 
-            entity.Property(e => e.IdEndereco).HasColumnName("ID_endereco");
-            entity.Property(e => e.Bairro)
-                .HasMaxLength(100)
-                .HasColumnName("bairro");
-            entity.Property(e => e.Cidade)
-                .HasMaxLength(100)
-                .HasColumnName("cidade");
-            entity.Property(e => e.Complemento)
-                .HasMaxLength(100)
-                .HasColumnName("complemento");
-            entity.Property(e => e.Logradouro)
-                .HasMaxLength(100)
-                .HasColumnName("logradouro");
-            entity.Property(e => e.Numero).HasColumnName("numero");
+            entity.Property(e => e.IdAddress).HasColumnName("ID_Address");
+            entity.Property(e => e.City).HasMaxLength(100);
+            entity.Property(e => e.Complement).HasMaxLength(100);
+            entity.Property(e => e.District).HasMaxLength(100);
+            entity.Property(e => e.Street).HasMaxLength(100);
             entity.Property(e => e.Uf)
                 .HasMaxLength(2)
                 .IsFixedLength()
                 .HasColumnName("UF");
         });
 
-        modelBuilder.Entity<Restaurante>(entity =>
+        modelBuilder.Entity<Restaurant>(entity =>
         {
             entity.HasKey(e => e.Cnpj).HasName("PRIMARY");
 
-            entity.ToTable("restaurante");
+            entity.ToTable("restaurant");
 
-            entity.HasIndex(e => e.FkIdEndereco, "Fk_Id_endereco");
+            entity.HasIndex(e => e.FkAddressId, "Fk_Address_Id");
 
             entity.Property(e => e.Cnpj)
                 .HasMaxLength(18)
                 .IsFixedLength()
                 .HasColumnName("CNPJ");
             entity.Property(e => e.Email).HasMaxLength(50);
-            entity.Property(e => e.FkIdEndereco).HasColumnName("Fk_Id_endereco");
-            entity.Property(e => e.HashSenha)
+            entity.Property(e => e.FkAddressId).HasColumnName("Fk_Address_Id");
+            entity.Property(e => e.Name).HasMaxLength(80);
+            entity.Property(e => e.PasswordHash)
                 .HasMaxLength(255)
-                .HasColumnName("Hash_senha");
-            entity.Property(e => e.Nome).HasMaxLength(80);
+                .HasColumnName("Password_Hash");
 
-            entity.HasOne(d => d.FkIdEnderecoNavigation).WithMany(p => p.Restaurantes)
-                .HasForeignKey(d => d.FkIdEndereco)
+            entity.HasOne(d => d.FkAddress).WithMany(p => p.Restaurants)
+                .HasForeignKey(d => d.FkAddressId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("restaurante_ibfk_1");
+                .HasConstraintName("restaurant_ibfk_1");
         });
 
         OnModelCreatingPartial(modelBuilder);
