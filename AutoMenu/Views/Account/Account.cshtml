@@ -1,139 +1,139 @@
 <div id="choice-button">
-      <button type="button" id="register" onclick="btn_register()">Cadastro</button>
-      <button type="button" id="logar" onclick="btn_logar()">Logar</button>
-    </div>
-    <form id="form-register" action="" style="display: none" class="forms-login">
+    <button type="button" id="register" onclick="btn_register()">Cadastro</button>
+    <button type="button" id="logar" onclick="btn_logar()">Logar</button>
+</div>
+<form id="form-register" asp-controller="Account" asp-action="Create"  style="display: none" class="forms-login">
 
-      <div id="stage-1">
+    <div id="stage-1">
         <div class="format">
-         
-          <input class="inputs-forms" type="text" id="Cnpj" name="Cnpj" maxlength="18"/>
-          <label class="label-forms" for="Cnpj">Cnpj:</label>
-          <span class="error-text" id="error-Cnpj"></span>
+
+            <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" />
+            <label class="label-forms" for="Cnpj">Cnpj:</label>
+            <span class="error-text" id="error-Cnpj"></span>
         </div>
 
         <div class="format">
-          
-          <input class="inputs-forms" type="text" id="Name" name="Name"  maxlength="80" />
-          <label class="label-forms" for="Name">Nome</label>
-          <span class="error-text" id="error-Name"></span>
+
+            <input class="inputs-forms" type="text" id="Name" name="Name" maxlength="80" />
+            <label class="label-forms" for="Name">Nome</label>
+            <span class="error-text" id="error-Name"></span>
         </div>
         <button class="buttons" type="button" onclick="back_stage1()">Voltar</button>
         <button class="buttons" type="button" onclick="show_stage2()">Proxima</button>
-      </div>
+    </div>
 
-      <div id="stage-2" style="display: none">
+    <div id="stage-2" style="display: none">
         <div class="format">
-          
-          <select id="uf" name="uf" class="inputs-forms" required>
-            <option value="" disabled selected></option>
-            <option value="MG">MG</option>
-            <option value="RJ">RJ</option>
-            <option value="SP">SP</option>
-            <option value="DF">DF</option>
-            <option value="GO">GO</option>
-            <option value="PR">PR</option>
-            <option value="PA">PA</option>
-            <option value="RR">RR</option>
-            <option value="BA">BA</option>
-            <option value="SC">SC</option>
-            <option value="RS">RS</option>
-            <option value="AC">AC</option>
-            <option value="AM">AM</option>
-            <option value="RO">RO</option>
-            <option value="AP">AP</option>
-            <option value="MA">MA</option>
-            <option value="MS">MS</option>
-            <option value="CE">CE</option>
-            <option value="MT">MT</option>
-            <option value="PI">PI</option>
-            <option value="RN">RN</option>
-            <option value="PB">PB</option>
-            <option value="PE">PE</option>
-            <option value="AL">AL</option>
-            <option value="SE">SE</option>
-            <option value="TO">TO</option>
-            <option value="ES">ES</option>
-          </select>
-          <label  class="label-forms" for="uf">UF:</label>
+
+            <select id="uf" name="UF" class="inputs-forms" required>
+                <option value="" disabled selected></option>
+                <option value="MG">MG</option>
+                <option value="RJ">RJ</option>
+                <option value="SP">SP</option>
+                <option value="DF">DF</option>
+                <option value="GO">GO</option>
+                <option value="PR">PR</option>
+                <option value="PA">PA</option>
+                <option value="RR">RR</option>
+                <option value="BA">BA</option>
+                <option value="SC">SC</option>
+                <option value="RS">RS</option>
+                <option value="AC">AC</option>
+                <option value="AM">AM</option>
+                <option value="RO">RO</option>
+                <option value="AP">AP</option>
+                <option value="MA">MA</option>
+                <option value="MS">MS</option>
+                <option value="CE">CE</option>
+                <option value="MT">MT</option>
+                <option value="PI">PI</option>
+                <option value="RN">RN</option>
+                <option value="PB">PB</option>
+                <option value="PE">PE</option>
+                <option value="AL">AL</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+                <option value="ES">ES</option>
+            </select>
+            <label class="label-forms" for="uf">UF:</label>
         </div>
 
         <div class="format">
-          
-          <input class="inputs-forms" type="text" id="City" name="City" />
-          <label  class="label-forms" for="City">Cidade:</label>
-          <span class="error-text" id="error-City"></span>
+
+            <input class="inputs-forms" type="text" id="City" name="City" />
+            <label class="label-forms" for="City">Cidade:</label>
+            <span class="error-text" id="error-City"></span>
         </div>
 
         <div class="format">
-          
-          <input class="inputs-forms" type="text" id="District" name="District" />
-          <label  class="label-forms" for="District">Bairo:</label>
-          <span class="error-text" id="error-District"></span>
+
+            <input class="inputs-forms" type="text" id="District" name="District" />
+            <label class="label-forms" for="District">Bairo:</label>
+            <span class="error-text" id="error-District"></span>
         </div>
 
         <div class="format">
-          
-          <input class="inputs-forms" type="text" id="Address" name="Address" />
-          <label  class="label-forms" for="Address">Logradouro:</label>
-          <span class="error-text" id="error-Address"></span>
+
+            <input class="inputs-forms" type="text" id="Street" name="Address" />
+            <label class="label-forms" for="Street">Logradouro:</label>
+            <span class="error-text" id="error-Address"></span>
         </div>
 
         <div class="format">
-          
-          <input class="inputs-forms" type="text" id="Number" name="Number" />
-          <label  class="label-forms" for="Number">Numero:</label>
-          <span class="error-text" id="error-Number"></span>
+
+            <input class="inputs-forms" type="text" id="Number" name="Number" />
+            <label class="label-forms" for="Number">Numero:</label>
+            <span class="error-text" id="error-Number"></span>
         </div>
 
         <div class="format">
-          
-          <input class="inputs-forms" type="text" id="Complement" name="Complement" />
-          <label  class="label-forms" for="Complement">Complemento:</label>
-          <span class="error-text" id="error-Complement"></span>
+
+            <input class="inputs-forms" type="text" id="Complement" name="Complement" />
+            <label class="label-forms" for="Complement">Complemento:</label>
+            <span class="error-text" id="error-Complement"></span>
         </div>
 
-        <button class="buttons" type="button" onclick="back_stage2()" >Voltar</button>
+        <button class="buttons" type="button" onclick="back_stage2()">Voltar</button>
         <button class="buttons" type="button" onclick="show_stage3()">Proxima</button>
 
-      </div>
+    </div>
 
-      <div id="stage-3" style="display: none">
+    <div id="stage-3" style="display: none">
         <div class="format">
-          
-          <input class="inputs-forms" type="text" id="Email" name="Email" />
-          <label  class="label-forms" for="Email">Email:</label>
-          <span class="error-text" id="error-Email"></span>
+
+            <input class="inputs-forms" type="text" id="Email" name="Email" />
+            <label class="label-forms" for="Email">Email:</label>
+            <span class="error-text" id="error-Email"></span>
         </div>
 
         <div class="format">
-          
-          <input class="inputs-forms" type="password" id="Password" name="Password" />
-          <label  class="label-forms" for="Password">Senha:</label>
-          <span class="error-text" id="error-Password"></span>
+
+            <input class="inputs-forms" type="password" id="Password" name="Password" />
+            <label class="label-forms" for="Password">Senha:</label>
+            <span class="error-text" id="error-Password"></span>
         </div>
 
         <button class="buttons" type="button" onclick="back_stage3()">voltar</button>
-        <button class="buttons" type="button" onclick="validar_etapa3()" >Cadastrar</button>
-      </div>
-    </form>
+        <button id="register-button" class="buttons" type="button" onclick="validar_etapa3()">Cadastrar</button>
+    </div>
+</form>
 
-    <form id="form-login" action="" style="display: none" class="forms-login">
-      <div class="format">
+<form id="form-login" action="" style="display: none" class="forms-login">
+    <div class="format">
         <input class="inputs-forms" type="text" id="cnpj-login" name="cnpj-login" />
-        <label  class="label-forms" for="cnpj-login">Cnpj:</label>
+        <label class="label-forms" for="cnpj-login">Cnpj:</label>
         <span></span>
-      </div>
+    </div>
 
-      <div class="format">    
+    <div class="format">
         <input class="inputs-forms" type="password" id="senha-login" name="senha-login" />
-        <label  class="label-forms" for="senha-login">Senha:</label>
+        <label class="label-forms" for="senha-login">Senha:</label>
         <span></span>
-      </div>
+    </div>
 
-      <button class="buttons" type="button" onclick="back_login()">voltar</button>
-      <button class="buttons" type="submit">Logar</button>
-    </form>
+    <button class="buttons" type="button" onclick="back_login()">voltar</button>
+    <button class="buttons" type="submit">Logar</button>
+</form>
 
 @section scripts {
     <script src="~/Account.js"></script>
