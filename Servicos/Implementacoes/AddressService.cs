@@ -1,5 +1,5 @@
 ﻿using Entities;
-using Services.Abstracao;
+using Services.Abstractions;
 using Services.DTO.AddRequests;
 using Services.DTO.Responses;
 using Services.Helpers;
@@ -17,7 +17,7 @@ namespace Services.Implementacoes
         public async Task<AddressResponse> AddAddressAsync(AddressAddRequest enderecoAddRequest)
         {
             if (enderecoAddRequest == null) throw new ArgumentNullException(nameof(enderecoAddRequest));
-            if (!ValidationHelper.IsValido(enderecoAddRequest)) throw new ArgumentException("Endereço invalido!");
+            if (!ValidationHelper.IsValid(enderecoAddRequest)) throw new ArgumentException("Endereço invalido!");
 
             Address endereco = enderecoAddRequest.ToAddress();
 

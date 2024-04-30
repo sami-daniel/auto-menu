@@ -1,5 +1,5 @@
 ﻿using Entities;
-using Services.Abstracao;
+using Services.Abstractions;
 using Services.DTO.AddRequests;
 using Services.Implementacoes;
 using Xunit.Sdk;

@@ -1,7 +1,7 @@
 ﻿using Services.DTO.AddRequests;
 using Services.DTO.Responses;
 
-namespace Services.Abstracao
+namespace Services.Abstractions
 {
     public interface IRestaurantService
     {

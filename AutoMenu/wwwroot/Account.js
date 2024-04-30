@@ -184,7 +184,6 @@ function validar_etapa3() {
     var span_Password = document.getElementById("error-Password");
 
     var regexemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    var regexsenha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z@$!%*?&]*$/;
 
     if (email === "") {
         span_email.textContent = "Insira um email!";
@@ -202,7 +201,7 @@ function validar_etapa3() {
         var email_valido = true;
     }
 
-    var regexsenha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/;
+    var regexsenha = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
 
     if (Password === "") {
         span_Password.textContent = "Insira uma senha!";
@@ -224,7 +223,7 @@ function validar_etapa3() {
     }
 
     if (Passwordvalido && email_valido) {
-        document.getElementById('register-button').submit()
+        document.getElementById('form-register').submit()
     }
 }
 

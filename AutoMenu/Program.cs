@@ -1,5 +1,5 @@
 using Entities;
-using Services.Abstracao;
+using Services.Abstractions;
 using Services.Implementacoes;
 
 namespace AutoMenu

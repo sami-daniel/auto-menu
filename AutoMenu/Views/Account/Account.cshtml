@@ -2,11 +2,10 @@
     <button type="button" id="register" onclick="btn_register()">Cadastro</button>
     <button type="button" id="logar" onclick="btn_logar()">Logar</button>
 </div>
-<form id="form-register" asp-controller="Account" asp-action="Create"  style="display: none" class="forms-login">
+<form id="form-register" asp-controller="Account" asp-action="Create" method="POST" style="display: none" class="forms-login">
 
     <div id="stage-1">
         <div class="format">
-
             <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" />
             <label class="label-forms" for="Cnpj">Cnpj:</label>
             <span class="error-text" id="error-Cnpj"></span>
@@ -74,8 +73,8 @@
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="Street" name="Address" />
-            <label class="label-forms" for="Street">Logradouro:</label>
+            <input class="inputs-forms" type="text" id="Address" name="Street" />
+            <label class="label-forms" for="Address">Logradouro:</label>
             <span class="error-text" id="error-Address"></span>
         </div>
 
@@ -114,7 +113,7 @@
         </div>
 
         <button class="buttons" type="button" onclick="back_stage3()">voltar</button>
-        <button id="register-button" class="buttons" type="button" onclick="validar_etapa3()">Cadastrar</button>
+        <button class="buttons" type="button" onclick="validar_etapa3()">Cadastrar</button>
     </div>
 </form>
 

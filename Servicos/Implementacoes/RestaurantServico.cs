@@ -1,5 +1,5 @@
 ﻿using Entities;
-using Services.Abstracao;
+using Services.Abstractions;
 using Services.DTO.AddRequests;
 using Services.DTO.Responses;
 using Services.Helpers;
@@ -18,7 +18,7 @@ namespace Services.Implementacoes
         public async Task<RestaurantResponse> AddRestaurantAsync(RestaurantAddRequest restauranteAddRequest)
         {
             if (restauranteAddRequest == null) throw new ArgumentNullException(nameof(restauranteAddRequest));
-            if (!ValidationHelper.IsValido(restauranteAddRequest)) throw new ArgumentException("Restaurante invalido!");
+            if (!ValidationHelper.IsValid(restauranteAddRequest)) throw new ArgumentException("Restaurante invalido!");
 
             var restauranteResponse = restauranteAddRequest.ToRestaurant();
             await _db.Restaurants.AddAsync(restauranteResponse);

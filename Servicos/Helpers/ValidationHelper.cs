@@ -4,7 +4,7 @@ namespace Services.Helpers
 {
     public static class ValidationHelper
     {
-        public static bool IsValido(object obj)
+        public static bool IsValid(object obj)
         {
             ValidationContext validationContext = new ValidationContext(obj);
 
