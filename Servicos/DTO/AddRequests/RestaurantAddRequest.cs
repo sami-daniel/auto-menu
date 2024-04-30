@@ -61,7 +61,7 @@ namespace Services.DTO.AddRequests
             Cnpj = CNPJ,
             Name = Name,
             Email = Email,
-            PasswordHash = HasherSenha.HashearSenha(Password),
+            PasswordHash = PasswordHasher.HashPassword(Password),
             FkAddressId = FkAddressId
         };
     }

@@ -17,7 +17,7 @@ namespace Services.Implementacoes
         public async Task<AddressResponse> AddAddressAsync(AddressAddRequest enderecoAddRequest)
         {
             if (enderecoAddRequest == null) throw new ArgumentNullException(nameof(enderecoAddRequest));
-            if (!HelperValidacao.IsValido(enderecoAddRequest)) throw new ArgumentException("Endereço invalido!");
+            if (!ValidationHelper.IsValido(enderecoAddRequest)) throw new ArgumentException("Endereço invalido!");
 
             Address endereco = enderecoAddRequest.ToAddress();
 
