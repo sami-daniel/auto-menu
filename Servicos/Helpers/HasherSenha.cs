@@ -1,4 +1,4 @@
-﻿namespace Servicos.Helpers
+﻿namespace Services.Helpers
 {
     /// <summary>
     /// Classe utilitária para hashear e verificar senhas usando o algoritmo bcrypt.

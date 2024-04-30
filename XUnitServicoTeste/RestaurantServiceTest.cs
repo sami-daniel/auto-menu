@@ -1,19 +1,19 @@
-﻿using Entidades;
-using Servicos.Abstracao;
-using Servicos.DTO.AddRequests;
-using Servicos.Implementacoes;
+﻿using Entities;
+using Services.Abstracao;
+using Services.DTO.AddRequests;
+using Services.Implementacoes;
 using Xunit.Sdk;
 
 namespace XUnitServicoTeste
 {
-    public class RestauranteServicoTeste
+    public class RestaurantServiceTest
     {
-        private readonly IRestauranteServico _restauranteServico;
-        private readonly IEnderecoServico _enderecoServico;
-        public RestauranteServicoTeste()
+        private readonly IRestaurantService _restauranteServico;
+        private readonly IAddressService _enderecoServico;
+        public RestaurantServiceTest()
         {
-            _restauranteServico = new RestauranteServico(new AutomenuDbContext());
-            _enderecoServico = new EnderecoServico(new AutomenuDbContext());
+            _restauranteServico = new RestaurantService(new AutomenuDbContext());
+            _enderecoServico = new AddressService(new AutomenuDbContext());
         }
         #region AddRestauranteAsyncXUnitTest
         [Fact]
@@ -21,12 +21,12 @@ namespace XUnitServicoTeste
         public async Task AddRestauranteAsync_RestauranteAddRequestNulo()
         {
             //Arrange
-            RestauranteAddRequest? restauranteAddRequest = null;
+            RestaurantAddRequest? restauranteAddRequest = null;
             //Assert
             await Assert.ThrowsAsync<ArgumentNullException>(async () =>
             {
                 //Act
-                await _restauranteServico.AddRestauranteAsync(restauranteAddRequest!);
+                await _restauranteServico.AddRestaurantAsync(restauranteAddRequest!);
             });
         }
         [Fact]
@@ -34,7 +34,7 @@ namespace XUnitServicoTeste
         public async Task AddRestauranteAsync_RestauranteAddRequestInvalido()
         {
             //Act
-            var restauranteAddRequest = new RestauranteAddRequest()
+            var restauranteAddRequest = new RestaurantAddRequest()
             {
                 CNPJ = "sdasdasd@31212 a", //CNPJ no formato invalido
             };
@@ -42,7 +42,7 @@ namespace XUnitServicoTeste
             await Assert.ThrowsAsync<ArgumentException>(async () =>
             {
                 //act
-                await _restauranteServico.AddRestauranteAsync(restauranteAddRequest);
+                await _restauranteServico.AddRestaurantAsync(restauranteAddRequest);
             });
         }
         [Fact]
@@ -50,17 +50,17 @@ namespace XUnitServicoTeste
         public async Task AddRestauranteAsync_RestauranteAddRequestAdicionadoCorretamente()
         {
             //Assert
-            var restauranteAddRequest = new RestauranteAddRequest()
+            var restauranteAddRequest = new RestaurantAddRequest()
             {
                 CNPJ = "12.345.678/0001-90",
                 Email = "restaurante@gmail.com",
-                Nome = "Comidas Delicosas E Sabor",
-                Senha = "Amaads@S1234!",
-                FkIdEndereco = _enderecoServico.GetAllEnderecos().First(endereco => endereco.IDEndereco == 1).IDEndereco
+                Name = "Comidas Delicosas E Sabor",
+                Password = "Amaads@S1234!",
+                FkAddressId = _enderecoServico.GetAllAddresses().First(endereco => endereco.AddressID == 1).AddressID
             };
             //Act
-            var response_addrestaurante = await _restauranteServico.AddRestauranteAsync(restauranteAddRequest);
-            var restaurante = _restauranteServico.GetAllRestaurantes();
+            var response_addrestaurante = await _restauranteServico.AddRestaurantAsync(restauranteAddRequest);
+            var restaurante = _restauranteServico.GetAllRestaurants();
             //Assert
             Assert.Contains(response_addrestaurante, restaurante);
         }

@@ -1,39 +1,39 @@
-﻿using Entidades;
-using Servicos.Abstracao;
-using Servicos.DTO.AddRequests;
-using Servicos.DTO.Responses;
-using Servicos.Helpers;
+﻿using Entities;
+using Services.Abstracao;
+using Services.DTO.AddRequests;
+using Services.DTO.Responses;
+using Services.Helpers;
 
-namespace Servicos.Implementacoes
+namespace Services.Implementacoes
 {
-    public class RestauranteServico : IRestauranteServico
+    public class RestaurantService : IRestaurantService
     {
         private readonly AutomenuDbContext _db;
 
-        public RestauranteServico(AutomenuDbContext dbContext)
+        public RestaurantService(AutomenuDbContext dbContext)
         {
             _db = dbContext;
         }
 
-        public async Task<RestauranteResponse> AddRestauranteAsync(RestauranteAddRequest restauranteAddRequest)
+        public async Task<RestaurantResponse> AddRestaurantAsync(RestaurantAddRequest restauranteAddRequest)
         {
             if (restauranteAddRequest == null) throw new ArgumentNullException(nameof(restauranteAddRequest));
             if (!HelperValidacao.IsValido(restauranteAddRequest)) throw new ArgumentException("Restaurante invalido!");
 
-            var restauranteResponse = restauranteAddRequest.ToRestaurante();
-            await _db.Restaurantes.AddAsync(restauranteResponse);
+            var restauranteResponse = restauranteAddRequest.ToRestaurant();
+            await _db.Restaurants.AddAsync(restauranteResponse);
             await _db.SaveChangesAsync();
 
-            return restauranteResponse.ToRestauranteResponse();
+            return restauranteResponse.ToRestaurantResponse();
         }
 
-        public IEnumerable<RestauranteResponse> GetAllRestaurantes()
+        public IEnumerable<RestaurantResponse> GetAllRestaurants()
         {
-            List<RestauranteResponse> restauranteResponses = new List<RestauranteResponse>();
+            List<RestaurantResponse> restauranteResponses = new List<RestaurantResponse>();
 
-            foreach(var item in _db.Restaurantes) 
+            foreach(var item in _db.Restaurants) 
             {
-                restauranteResponses.Add(item.ToRestauranteResponse());
+                restauranteResponses.Add(item.ToRestaurantResponse());
             }
 
             return restauranteResponses;

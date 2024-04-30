@@ -1,6 +1,6 @@
-using Entidades;
-using Servicos.Abstracao;
-using Servicos.Implementacoes;
+using Entities;
+using Services.Abstracao;
+using Services.Implementacoes;
 
 namespace AutoMenu
 {
@@ -12,8 +12,8 @@ namespace AutoMenu
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<AutomenuDbContext>();
-            builder.Services.AddScoped<IEnderecoServico, EnderecoServico>();
-            builder.Services.AddScoped<IRestauranteServico, RestauranteServico>();
+            builder.Services.AddScoped<IAddressService, AddressService>();
+            builder.Services.AddScoped<IRestaurantService, RestaurantService>();
             //cria o WebApplication
             var app = builder.Build();
             //habilita os middlewares para lidar com certas requisi��es
