@@ -9,7 +9,7 @@ namespace AutoMenu.Controllers
         public IActionResult Account()
         {
             // metodo IActionResult para a pagina index principal
-            ViewBag.Css = "Conta.css";
+            ViewBag.Css = "Account.css";
             return View();
         }
     }
