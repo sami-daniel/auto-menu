@@ -136,4 +136,18 @@
 
 @section scripts {
     <script src="~/Account.js"></script>
+    <script>
+        document.getElementById('Cnpj').addEventListener('input', function () {
+            var inputCnpj = this.value;
+            var cnpjList = @Html.Raw(Json.Serialize(ViewBag.Cnpjs));
+
+            var cnpjExists = cnpjList.includes(inputCnpj);
+
+            if (cnpjExists) {
+                document.getElementById('error-Cnpj').textContent = "CNPJ Existente";
+            } else {
+                document.getElementById('error-Cnpj').textContent = "";
+            }
+        })
+    </script>
 }
