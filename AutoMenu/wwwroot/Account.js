@@ -184,7 +184,7 @@ function validar_etapa3() {
     var span_Password = document.getElementById("error-Password");
 
     var regexemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    var regexsenha = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
+    var regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
 
     if (email === "") {
         span_email.textContent = "Insira um email!";
@@ -212,7 +212,7 @@ function validar_etapa3() {
     } else if (Password.length >= 30) {
         span_Password.textContent = "Senha deve ser menor que 30 caracteres";
         var Password_obrigatorio = true;
-    } else if (!regexsenha.test(Password)) {
+    } else if (!regexPassword.test(Password)) {
         span_Password.textContent = "A senha deve conter pelo menos uma letra minúscula, uma letra maiúscula, um caractere especial (@$!%*?&)";
         var Password_caracteres = true;
         var Password_obrigatorio = true;
@@ -229,14 +229,14 @@ function validar_etapa3() {
 }
 
 function validacao_login(){
-  var email_login = document.getElementById("Email-login").value.trim();
-  var span_email_login = document.getElementById("error-Email-login");
+  var Password_login = document.getElementById("Password-login").value.trim();
+  var span_Password_login = document.getElementById("error-Password-login");
 
-  var Cnpj_login = document.getElementById("cnpj-login").value.trim();
-  var span_cnpj_login = document.getElementById("error-cnpj-login");
+  var Cnpj_login = document.getElementById("Cnpj-login").value.trim();
+  var span_cnpj_login = document.getElementById("error-Cnpj-login");
 
   var cnpjPattern = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
-  var regexemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  var regexPassword =  /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
 
 
   if (Cnpj_login === "") {
@@ -254,23 +254,28 @@ function validacao_login(){
     var cnpj_login_valido = true;
 }
 
-if (email_login === "") {
-  span_email_login.textContent = "Insira um email!";
-} else if (email_login.length >= 100) {
-  span_email_login.textContent = "Email deve ser menor que 100 caracteres";
-  var email_obrigatorio = true;
-} else if (!regexemail.test(email_login)) {
-  span_email_login.textContent = "Email invalido";
-  var email_caracteres = true;
-  var email_obrigatorio = true;
+
+if (Password_login === "") {
+    span_Password_login.textContent = "Insira uma senha!";
+} else if (Password_login.length < 8) {
+    span_Password_login.textContent = "Senha não pode ser menor que 8 caracteres";
+    var Password_obrigatorio = true;
+} else if (Password_login.length >= 30) {
+    span_Password_login.textContent = "Senha deve ser menor que 30 caracteres";
+    var Password_obrigatorio = true;
+} else if (!regexPassword.test(Password_login)) {
+    span_Password_login.textContent = "A senha deve conter pelo menos uma letra minúscula, uma letra maiúscula, um caractere especial (@$!%*?&)";
+    var Password_caracteres = true;
+    var Password_obrigatorio = true;
 } else {
-  span_email_login.textContent = "";
-  var email_obrigatorio = true;
-  var email_caracteres = true;
-  var email_login_valido = true;
+    span_Password_login.textContent = "";
+    var Password_obrigatorio = true;
+    var Password_caracteres = true;
+    var Password_login_valido = true;
 }
 
-if (cnpj_login_valido && email_login_valido) {
+
+if (cnpj_login_valido && Password_login_valido) {
   document.getElementById('form-register').submit()
 }
 
