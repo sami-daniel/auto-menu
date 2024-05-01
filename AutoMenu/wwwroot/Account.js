@@ -184,6 +184,7 @@ function validar_etapa3() {
     var span_Password = document.getElementById("error-Password");
 
     var regexemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    var regexsenha = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
 
     if (email === "") {
         span_email.textContent = "Insira um email!";
@@ -201,7 +202,7 @@ function validar_etapa3() {
         var email_valido = true;
     }
 
-    var regexsenha = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
+   
 
     if (Password === "") {
         span_Password.textContent = "Insira uma senha!";
@@ -226,6 +227,56 @@ function validar_etapa3() {
         document.getElementById('form-register').submit()
     }
 }
+
+function validacao_login(){
+  var email_login = document.getElementById("Email-login").value.trim();
+  var span_email_login = document.getElementById("error-Email-login");
+
+  var Cnpj_login = document.getElementById("cnpj-login").value.trim();
+  var span_cnpj_login = document.getElementById("error-cnpj-login");
+
+  var cnpjPattern = /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/;
+  var regexemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+  if (Cnpj_login === "") {
+    span_cnpj_login.textContent = "Insira o CNPJ";
+} else if (Cnpj_login.length != 18) {
+    var cnpj_obrigatorio = true;
+    span_cnpj_login.textContent = "O CNPJ deve ter 18 caracteres!";
+} else if (!cnpjPattern.test(Cnpj_login)) {
+  span_cnpj_login.textContent = "cnpj invalido";
+    var cnpj_caracteres = true;
+} else {
+  span_cnpj_login.textContent = "";
+    var cnpj_obrigatorio = true;
+    var cnpj_caracteres = true;
+    var cnpj_login_valido = true;
+}
+
+if (email_login === "") {
+  span_email_login.textContent = "Insira um email!";
+} else if (email_login.length >= 100) {
+  span_email_login.textContent = "Email deve ser menor que 100 caracteres";
+  var email_obrigatorio = true;
+} else if (!regexemail.test(email_login)) {
+  span_email_login.textContent = "Email invalido";
+  var email_caracteres = true;
+  var email_obrigatorio = true;
+} else {
+  span_email_login.textContent = "";
+  var email_obrigatorio = true;
+  var email_caracteres = true;
+  var email_login_valido = true;
+}
+
+if (cnpj_login_valido && email_login_valido) {
+  document.getElementById('form-register').submit()
+}
+
+
+}
+
 
 function back_stage1() {
     if (btn_choice.style.display === "none") {

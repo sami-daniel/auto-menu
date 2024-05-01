@@ -121,17 +121,17 @@
     <div class="format">
         <input class="inputs-forms" type="text" id="cnpj-login" name="cnpj-login" />
         <label class="label-forms" for="cnpj-login">Cnpj:</label>
-        <span></span>
+        <span class="error-text" id="error-cnpj-login"></span>
     </div>
 
     <div class="format">
         <input class="inputs-forms" type="password" id="senha-login" name="senha-login" />
         <label class="label-forms" for="senha-login">Senha:</label>
-        <span></span>
+        <span class="error-text" id="error-Email-login"></span>
     </div>
 
     <button class="buttons" type="button" onclick="back_login()">voltar</button>
-    <button class="buttons" type="submit">Logar</button>
+    <button class="buttons" type="button" onclick="validacao_login()">Logar</button>
 </form>
 
 @section scripts {
