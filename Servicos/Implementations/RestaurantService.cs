@@ -22,18 +22,17 @@ namespace Services.Implementations
             if (restauranteAddRequest == null) throw new ArgumentNullException(nameof(restauranteAddRequest));
             if (!ValidationHelper.IsValid(restauranteAddRequest)) throw new ArgumentException("Restaurante invalido!");
 
-            var restauranteResponse = restauranteAddRequest.ToRestaurant();
-            try
-            {
-                await _db.Restaurants.AddAsync(restauranteResponse);
-            }
-            catch (DbUpdateException)
+            var restaurant = restauranteAddRequest.ToRestaurant();
+
+            if (_db.Restaurants.Select(r => r.Cnpj).Contains(restauranteAddRequest.CNPJ))
             {
                 throw new ExistingRestaurantException();
             }
+
+            await _db.Restaurants.AddAsync(restaurant);
             await _db.SaveChangesAsync();
 
-            return restauranteResponse.ToRestaurantResponse();
+            return restaurant.ToRestaurantResponse();
         }
 
         public async Task<IEnumerable<RestaurantResponse>> GetAllRestaurantsAsync()
