@@ -10,18 +10,23 @@ namespace Services.DTO.Responses
         /// <summary>
         /// Initializes a new instance of the RestaurantResponse class.
         /// </summary>
+        /// <param name="ID">The ID of the restaurant.</param>
         /// <param name="cnpj">The CNPJ of the restaurant.</param>
         /// <param name="name">The name of the restaurant.</param>
         /// <param name="email">The email of the restaurant.</param>
         /// <param name="fkAddressId">The ID of the address associated with the restaurant.</param>
-        public RestaurantResponse(string cnpj, string name, string email, int fkAddressId)
+        public RestaurantResponse(int iD, string cnpj, string name, string email, int fkAddressId)
         {
+            ID = iD;
             Cnpj = cnpj;
             Name = name;
             Email = email;
             FkAddressId = fkAddressId;
         }
-
+        /// <summary>
+        /// Gets the ID of the restaurant.
+        /// </summary>
+        public int ID { get; }
         /// <summary>
         /// Gets the CNPJ of the restaurant.
         /// </summary>
@@ -69,7 +74,8 @@ namespace Services.DTO.Responses
         /// <param name="restaurant">The restaurant to be converted.</param>
         /// <returns>An instance of RestaurantResponse containing the restaurant information.</returns>
         public static RestaurantResponse ToRestaurantResponse(this Restaurant restaurant) =>
-            new RestaurantResponse(cnpj: restaurant.Cnpj,
+            new RestaurantResponse(iD: restaurant.IdRestaurant,
+                                   cnpj: restaurant.Cnpj,
                                    name: restaurant.Name,
                                    email: restaurant.Email,
                                    fkAddressId: restaurant.FkAddressId);
