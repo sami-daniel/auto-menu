@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Services.DTO.AddRequests;
 using Services.Abstractions;
+using Servicos.Exceptions;
 
 namespace AutoMenu.Controllers
 {
