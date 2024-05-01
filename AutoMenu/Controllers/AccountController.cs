@@ -39,12 +39,12 @@ namespace AutoMenu.Controllers
             restaurantAddRequest.FkAddressId = fk_address.AddressID;
             try
             {
-            await _restaurantService.AddRestaurantAsync(restaurantAddRequest);
+                await _restaurantService.AddRestaurantAsync(restaurantAddRequest);
             }
             catch (ExistingRestaurantException)
             {
                 await _addressService.RemoveAddressByIDAsync(fk_address.AddressID);
-                return BadRequest($"Um restaurante com o CNPJ {restaurantAddRequest.CNPJ} j√° est√° registrado!");
+                return BadRequest($"Um restaurante com o CNPJ {restaurantAddRequest.CNPJ} j· est· registrado!");
             }
             return RedirectPermanent("Account/");
         }
