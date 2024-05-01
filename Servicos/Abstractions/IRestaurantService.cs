@@ -24,5 +24,10 @@ namespace Services.Abstractions
         /// An object representing the restaurant identified by the provided CNPJ number.
         /// </returns>
         Task<RestaurantResponse?> GetRestaurantByCNPJAsync(string CNPJ);
+        /// <summary>
+        /// Removes a restaurant by its CNPJ number.
+        /// </summary>
+        /// <param name="CNPJ">The CNPJ number of the restaurant to remove.</param>
+        Task RemoveRestaurantByCNPJAsync(string CNPJ);
     }
 }
