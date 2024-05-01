@@ -1,116 +1,125 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    list-style:none;
-    text-decoration:none;
-    
-  }
-  
-  #choice-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .format {
-      position:relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-flow: column wrap;
-  }
-  .format:nth-child(2){
-      margin-top:2%;
-  }
-      .format:nth-child(3) {
-          margin-top: 2%;
-      }
-      .format:nth-child(4) {
-          margin-top: 2%;
-      }
-      .format:nth-child(5) {
-          margin-top: 2%;
-      }
-      .format:nth-child(6) {
-          margin-top: 2%;
-      }
-      .format:last-child{
-          margin-top:2%;
-      }
-      .content-forms {
-          padding: 50px;
-      }
-  .content-forms > h1 {
-      text-align: center;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      color: #1298EE;
-  }
-          .forms-login > h1 {
-              text-align: center;
-              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-              color: #1298EE;
-          }
-  
-      
-  
-  
-      .forms-login {
-          margin: 10% auto;
-          border: 2px solid #1298EE;
-          border-radius: 10px;
-          height: auto;
-          width: 50%;
-          padding: 10px;
-      }
-  
-  .buttons {
-      width:25%;
-      padding: 5px;
-      color: #1298EE;
-      background: transparent;
-      border: 1px solid #1298EE;
-      border-radius: 5px;
-      font-size: 1.1em;
-      margin:2% auto;
-      cursor: pointer;
-      transition: .4s;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-      .buttons:not(:last-child) {
-          margin-top: 10%;
-      }
-      .buttons:hover {
-          background-color: #1298EE;
-          color: white;
-      }
-  
-  .inputs-forms {
-      font-size: 1.1em;
-      border: none;
-      width: 75%;
-      border-bottom: 2px solid #1298EE;
-      padding: 2px;
-      color: #1298EE;
-      outline: none;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
-  
-  .label-forms {
-      font-size: 1.2em;
-      color: #1298EE;
-      letter-spacing: 1.4px;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      position:absolute;
-      top:5px;
-      left:13%;
-      pointer-events: none;
-      transition: .375s;
-  }
-  
-      .inputs-forms:focus~.label-forms,
-      .inputs-forms:valid~.label-forms{
-          font-size:0.75em;
-          top: -10px;
-      }
-  
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+#choice-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-choice-style {
+  border: solid #1298ee 3px;
+  text-decoration: none;
+  background: transparent;
+  padding: 10px 30px 10px 30px;
+  color: black;
+  cursor: pointer;
+}
+
+.format {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+.format:nth-child(2) {
+  margin-top: 2%;
+}
+.format:nth-child(3) {
+  margin-top: 2%;
+}
+.format:nth-child(4) {
+  margin-top: 2%;
+}
+.format:nth-child(5) {
+  margin-top: 2%;
+}
+.format:nth-child(6) {
+  margin-top: 2%;
+}
+.format:last-child {
+  margin-top: 2%;
+}
+.content-forms {
+  padding: 50px;
+}
+.content-forms > h1 {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #1298ee;
+}
+.forms-login > h1 {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #1298ee;
+}
+
+.forms-login {
+  margin: 10% auto;
+  border: 2px solid #1298ee;
+  border-radius: 10px;
+  height: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.buttons {
+  width: 25%;
+  padding: 5px;
+  color: #1298ee;
+  background: transparent;
+  border: 1px solid #1298ee;
+  border-radius: 5px;
+  font-size: 1.1em;
+  margin: 2% auto;
+  cursor: pointer;
+  transition: 0.4s;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.buttons:not(:last-child) {
+  margin-top: 10%;
+}
+.buttons:hover {
+  background-color: #1298ee;
+  color: white;
+}
+
+.inputs-forms {
+  font-size: 1.1em;
+  border: none;
+  width: 75%;
+  border-bottom: 2px solid #1298ee;
+  padding: 2px;
+  color: #1298ee;
+  outline: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.label-forms {
+  font-size: 1.2em;
+  color: #1298ee;
+  letter-spacing: 1.4px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 5px;
+  left: 13%;
+  pointer-events: none;
+  transition: 0.375s;
+}
+
+.inputs-forms:focus ~ .label-forms,
+.inputs-forms:valid ~ .label-forms {
+  font-size: 0.75em;
+  top: -10px;
+}

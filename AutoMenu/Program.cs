@@ -18,13 +18,12 @@ namespace AutoMenu
             //cria o WebApplication
             var app = builder.Build();
             //habilita os middlewares para lidar com certas requisi��es
-            if(app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseStaticFiles();
             app.UseRouting();
+            app.UseStaticFiles();
             app.MapControllerRoute(name: "default",
                                    pattern: "{controller=Home}/{action=Index}"
                 );
