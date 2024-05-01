@@ -36,8 +36,16 @@ namespace AutoMenu.Controllers
 
             var fk_address = await _addressService.AddAddressAsync(addressAddRequest);
             restaurantAddRequest.FkAddressId = fk_address.AddressID;
+            try
+            {
             await _restaurantService.AddRestaurantAsync(restaurantAddRequest);
-            return RedirectPermanent("/");
+            }
+            catch (ExistingRestaurantException)
+            {
+                await _addressService.RemoveAddressByIDAsync(fk_address.AddressID);
+                return BadRequest($"Um restaurante com o CNPJ {restaurantAddRequest.CNPJ} já está registrado!");
+            }
+            return RedirectPermanent("Account/");
         }
     }
 }
