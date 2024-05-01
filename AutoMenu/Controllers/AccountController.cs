@@ -17,10 +17,12 @@ namespace AutoMenu.Controllers
             _addressService = addressService;
             _restaurantService = restaurantService;
         }
-        public IActionResult Account()
+        public async Task<IActionResult> Account()
         {
             // metodo IActionResult para a pagina index principal
             ViewBag.Css = "Account.css";
+            var restaurants = await _restaurantService.GetAllRestaurantsAsync();
+            ViewBag.Cnpjs = restaurants.Select(restaurants => restaurants.Cnpj);
             return View();
         }
         [HttpPost]
