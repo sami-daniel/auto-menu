@@ -19,5 +19,10 @@ namespace Services.Abstractions
         /// </summary>
         /// <returns>All addresses from the Data Source</returns>
         IEnumerable<AddressResponse> GetAllAddresses();
+        /// <summary>
+        /// Removes a address by its ID number.
+        /// </summary>
+        /// <param name="ID">The ID number of the address to remove.</param>
+        Task RemoveAddressByIDAsync(int ID);
     }
 }
