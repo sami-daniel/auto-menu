@@ -52,6 +52,7 @@ namespace Services.Implementations
             }
 
             _db.Addresses.Remove(elementToRemove);
+            await _db.SaveChangesAsync();
         }
     }
 }

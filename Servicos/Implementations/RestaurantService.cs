@@ -58,6 +58,7 @@ namespace Services.Implementations
             }
 
             _db.Restaurants.Remove(elementToRemove);
+            await _db.SaveChangesAsync();
         }
     }
 }
