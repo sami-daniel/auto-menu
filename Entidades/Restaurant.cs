@@ -2,6 +2,8 @@
 
 public partial class Restaurant
 {
+    public int IdRestaurant { get; set; }
+
     public string Cnpj { get; set; } = null!;
 
     public string Name { get; set; } = null!;
