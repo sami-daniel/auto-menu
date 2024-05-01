@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Microsoft.EntityFrameworkCore;
 using Services.Abstractions;
 using Services.DTO.AddRequests;
 using Services.DTO.Responses;
@@ -38,6 +39,19 @@ namespace Services.Implementations
             }
 
             return enderecoResponses;
+        }
+
+        public async Task RemoveAddressByIDAsync(int ID)
+        {
+
+            var elementToRemove = await _db.Addresses.FirstOrDefaultAsync(a => a.IdAddress == ID);
+
+            if (elementToRemove == null)
+            {
+                throw new ArgumentNullException(nameof(ID));
+            }
+
+            _db.Addresses.Remove(elementToRemove);
         }
     }
 }
