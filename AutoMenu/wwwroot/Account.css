@@ -5,6 +5,11 @@
   text-decoration: none;
 }
 
+body{
+background-color: #FDF9ED;
+
+}
+
 #choice-button {
   position: absolute;
   top: 50%;
