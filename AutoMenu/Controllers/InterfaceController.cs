@@ -7,14 +7,14 @@ namespace AutoMenu.Controllers
     [Route("[controller]")]
     public class InterfaceController : Controller
     {
-        private readonly IConfiguration _configuration;
-        public InterfaceController(IConfiguration configuration)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public InterfaceController(IWebHostEnvironment webHostEnvironment)
         {
-            _configuration = configuration;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Interface()
         {
-            if (HttpContext.Session.GetObject<RestaurantResponse>("User") == null && _configuration["environmentVariables:ASPNETCORE_ENVIRONMENT"] != "Development")
+            if (HttpContext.Session.GetObject<RestaurantResponse>("User") == null && _webHostEnvironment.IsProduction())
             {
                 return RedirectToAction("", "Home");
             }
