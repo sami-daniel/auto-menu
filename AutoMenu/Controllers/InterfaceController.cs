@@ -14,7 +14,7 @@ namespace AutoMenu.Controllers
         }
         public IActionResult Interface()
         {
-            if (HttpContext.Session.GetObject<RestaurantResponse>("User") == null && _webHostEnvironment.IsProduction())
+            if (HttpContext.Session.GetObject<RestaurantResponse>("User") == null && !_webHostEnvironment.IsDevelopment())
             {
                 return RedirectToAction("", "Home");
             }
