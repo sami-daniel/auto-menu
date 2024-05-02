@@ -7,9 +7,9 @@ namespace AutoMenu.Controllers
     [Route("[controller]")]
     public class InterfaceController : Controller
     {
-        public IActionResult Index([FromServices] ISession session)
+        public IActionResult Index()
         {
-            if(session.GetObject<RestaurantResponse>("User") == null)
+            if(HttpContext.Session.GetObject<RestaurantResponse>("User") == null)
             {
                 RedirectToAction("", "Home");
             }
