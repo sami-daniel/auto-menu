@@ -54,7 +54,7 @@ namespace AutoMenu.Controllers
         }
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Login([FromForm] string CNPJ, [FromForm] string password, [FromServices] ISession session)
+        public async Task<IActionResult> Login([FromForm] string CNPJ, [FromForm] string password)
         {
             var restaurant = await _restaurantService.GetRestaurantByCNPJAsync(CNPJ);
             if (restaurant == null) return BadRequest("Senha ou CNPJ Invalido!");
@@ -64,7 +64,7 @@ namespace AutoMenu.Controllers
                 return BadRequest("Senha ou CNPJ Invalido!");
             }
 
-            session.SetObject("User", restaurant);
+            HttpContext.Session.SetObject("User", restaurant);
 
             return RedirectToActionPermanent("", "Interface");
         }
