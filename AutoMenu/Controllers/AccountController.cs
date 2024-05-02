@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Services.DTO.AddRequests;
 using Services.Abstractions;
 using Servicos.Exceptions;
+using AutoMenu.Models.Extensions;
+using Services.Helpers;
 
 namespace AutoMenu.Controllers
 {
@@ -27,13 +29,13 @@ namespace AutoMenu.Controllers
         }
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, [FromServices]IConfiguration configuration)
+        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, [FromServices] IConfiguration configuration)
         {
             if (!ModelState.IsValid && configuration["environmentVariables:ASPNETCORE_ENVIRONMENT"] == "Development")
             {
                 return BadRequest(ModelState); //Custom error page pra depois
             }
-            else if(!ModelState.IsValid)
+            else if (!ModelState.IsValid)
                 return BadRequest(string.Join(',', ModelState.Values.SelectMany(value => value.Errors).Select(error => error.ErrorMessage)));
 
 
@@ -48,7 +50,23 @@ namespace AutoMenu.Controllers
                 await _addressService.RemoveAddressByIDAsync(fk_address.AddressID);
                 return BadRequest($"Um restaurante com o CNPJ {restaurantAddRequest.CNPJ} já está registrado!");
             }
-            return RedirectPermanent("Account/");
+            return RedirectToActionPermanent("", "Account");
+        }
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<IActionResult> Login([FromForm] string CNPJ, [FromForm] string password, [FromServices] ISession session)
+        {
+            var restaurant = await _restaurantService.GetRestaurantByCNPJAsync(CNPJ);
+            if (restaurant == null) return BadRequest("Senha ou CNPJ Invalido!");
+
+            if (!PasswordHasher.VerifyPassword(password, restaurant.PasswordHash))
+            {
+                return BadRequest("Senha ou CNPJ Invalido!");
+            }
+
+            session.SetObject("User", restaurant);
+
+            return RedirectToActionPermanent("", "Interface");
         }
     }
 }
