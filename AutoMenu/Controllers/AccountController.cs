@@ -57,7 +57,7 @@ namespace AutoMenu.Controllers
         public async Task<IActionResult> Login([FromForm] string CNPJ, [FromForm] string password)
         {
             var restaurant = await _restaurantService.GetRestaurantByCNPJAsync(CNPJ);
-            if (restaurant == null) return BadRequest("Senha ou CNPJ Invalido!");
+            if (restaurant == null && password == null) return BadRequest("Senha ou CNPJ Invalido!");
 
             if (!PasswordHasher.VerifyPassword(password, restaurant.PasswordHash))
             {
