@@ -276,7 +276,7 @@ if (Password_login === "") {
 
 
 if (cnpj_login_valido && Password_login_valido) {
-  document.getElementById('form-register').submit()
+  document.getElementById('form-login').submit()
 }
 
 
