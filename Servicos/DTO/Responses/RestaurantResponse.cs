@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Services.Helpers;
 
 namespace Services.DTO.Responses
 {
@@ -15,12 +16,13 @@ namespace Services.DTO.Responses
         /// <param name="name">The name of the restaurant.</param>
         /// <param name="email">The email of the restaurant.</param>
         /// <param name="fkAddressId">The ID of the address associated with the restaurant.</param>
-        public RestaurantResponse(int iD, string cnpj, string name, string email, int fkAddressId)
+        public RestaurantResponse(int iD, string cnpj, string name, string email, string passwordHash, int fkAddressId)
         {
             ID = iD;
             Cnpj = cnpj;
             Name = name;
             Email = email;
+            PasswordHash = passwordHash;
             FkAddressId = fkAddressId;
         }
         /// <summary>
@@ -41,6 +43,11 @@ namespace Services.DTO.Responses
         /// Gets the email of the restaurant.
         /// </summary>
         public string Email { get; } = null!;
+        
+        /// <summary>
+        /// Gets the PasswordHas of the restaurant.
+        /// </summary>
+        public string PasswordHash { get; } = null!;
 
         /// <summary>
         /// Gets the ID of the address associated with the restaurant.
@@ -54,7 +61,7 @@ namespace Services.DTO.Responses
 
             var response = obj as RestaurantResponse;
 
-            return response.Cnpj == Cnpj && response.Name == Name && response.Email == Email && FkAddressId == FkAddressId;
+            return response.Cnpj == Cnpj && response.Name == Name && response.Email == Email && FkAddressId == FkAddressId && PasswordHash == PasswordHash;
         }
 
         public override int GetHashCode()
@@ -78,6 +85,7 @@ namespace Services.DTO.Responses
                                    cnpj: restaurant.Cnpj,
                                    name: restaurant.Name,
                                    email: restaurant.Email,
+                                   passwordHash: restaurant.PasswordHash,
                                    fkAddressId: restaurant.FkAddressId);
     }
 }
