@@ -11,9 +11,9 @@ namespace AutoMenu.Controllers
     [Route("[controller]")]
     public class AccountController : Controller
     {
-        private IAddressService _addressService;
-        private IRestaurantService _restaurantService;
-        private IConfiguration _configuration;
+        private readonly IAddressService _addressService;
+        private readonly IRestaurantService _restaurantService;
+        private readonly IConfiguration _configuration;
 
         public AccountController(IAddressService addressService, IRestaurantService restaurantService, IConfiguration configuration)
         {
