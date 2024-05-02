@@ -7,12 +7,16 @@ namespace AutoMenu.Controllers
     [Route("[controller]")]
     public class InterfaceController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Interface()
         {
-            if(HttpContext.Session.GetObject<RestaurantResponse>("User") == null)
+            /* 
+             if(HttpContext.Session.GetObject<RestaurantResponse>("User") == null)
             {
                 return RedirectToAction("", "Home");
             }
+            
+            */
+            ViewBag.Css = "Interface.css";
             return View();
         }
     }

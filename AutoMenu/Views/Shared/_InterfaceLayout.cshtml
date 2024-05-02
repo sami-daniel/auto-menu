@@ -1,15 +1,30 @@
 ﻿<!DOCTYPE html>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 </head>
+
 <body>
-    @*Tudo acima do corpo do seu site ficara aki*@
-    <div>
-        @RenderBody()
-    </div>
-    @*Tudo abaixo do corpo do seu site ficara aki*@
+    <main id="main-interface">
+        <header> 
+            <nav>
+                <ul>
+                    <li></li>
+                </ul>
+            </nav>
+        </header>
+        <nav>
+            <img src="~/logo.png" alt="logo do site"  asp-append-version="true">
+            <div></div>
+        </nav>
+
+        <div>
+            @RenderBody()
+        </div>
+    </main>
 </body>
+
 </html>
