@@ -31,7 +31,7 @@ namespace AutoMenu.Controllers
         }
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, [FromServices] )
+        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest)
         {
             if (!ModelState.IsValid && _configuration["environmentVariables:ASPNETCORE_ENVIRONMENT"] == "Development")
             {
