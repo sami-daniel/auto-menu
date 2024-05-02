@@ -11,7 +11,7 @@ namespace AutoMenu.Controllers
         {
             if(HttpContext.Session.GetObject<RestaurantResponse>("User") == null)
             {
-                RedirectToAction("", "Home");
+                return RedirectToAction("", "Home");
             }
             return View();
         }
