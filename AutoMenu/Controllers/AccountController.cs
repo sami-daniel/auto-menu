@@ -13,11 +13,13 @@ namespace AutoMenu.Controllers
     {
         private IAddressService _addressService;
         private IRestaurantService _restaurantService;
+        private IConfiguration _configuration;
 
-        public AccountController(IAddressService addressService, IRestaurantService restaurantService)
+        public AccountController(IAddressService addressService, IRestaurantService restaurantService, IConfiguration configuration)
         {
             _addressService = addressService;
             _restaurantService = restaurantService;
+            _configuration = configuration;
         }
         public async Task<IActionResult> Account()
         {
@@ -29,9 +31,9 @@ namespace AutoMenu.Controllers
         }
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, [FromServices] IConfiguration configuration)
+        public async Task<IActionResult> Create([FromForm] RestaurantAddRequest restaurantAddRequest, [FromForm] AddressAddRequest addressAddRequest, [FromServices] )
         {
-            if (!ModelState.IsValid && configuration["environmentVariables:ASPNETCORE_ENVIRONMENT"] == "Development")
+            if (!ModelState.IsValid && _configuration["environmentVariables:ASPNETCORE_ENVIRONMENT"] == "Development")
             {
                 return BadRequest(ModelState); //Custom error page pra depois
             }
