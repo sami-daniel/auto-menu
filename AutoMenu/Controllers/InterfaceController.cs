@@ -14,12 +14,12 @@ namespace AutoMenu.Controllers
         }
         public IActionResult Interface()
         {
-           /*  
+
             if (HttpContext.Session.GetObject<RestaurantResponse>("User") == null && !_webHostEnvironment.IsDevelopment())
             {
                 return RedirectToAction("", "Home");
             }
-            */
+            //Nao o if
 
 
             ViewBag.Css = "Interface.css";
