@@ -2,9 +2,17 @@
     <button type="button" class="button-choice-style" id="register" onclick="btn_register()">Cadastro</button>
     <button type="button" class="button-choice-style" id="logar" onclick="btn_logar()">Logar</button>
 </div>
-<form id="form-register" asp-controller="Account" asp-action="Create" enctype="application/x-www-form-urlencoded" method="POST" style="display: none" class="forms-login">
+<form id="form-register" asp-controller="Account" asp-action="Create" enctype="application/x-www-form-urlencoded"
+    method="POST" style="display: none" class="forms-login">
 
-    <div id="stage-1">
+    <div id="stage-1" style="gap: 20px;">
+        <h1 class="Register-show">Cadastrar</h1>
+        <div class="div-stages">
+            <div class="complete-stages stage-complete"><span>1</span></div>
+            <div class="complete-stages"><span>2</span></div>
+            <div class="complete-stages"><span>3</span></div>
+        </div>
+
         <div class="format">
             <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" />
             <label class="label-forms" for="Cnpj">Cnpj:</label>
@@ -17,11 +25,19 @@
             <label class="label-forms" for="Name">Nome</label>
             <span class="error-text" id="error-Name"></span>
         </div>
-        <button class="buttons" type="button" onclick="back_stage1()">Voltar</button>
-        <button class="buttons" type="button" onclick="show_stage2()">Proxima</button>
+        <div id="buttons-format">
+            <button class="buttons" type="button" onclick="back_stage1()">Voltar</button>
+            <button class="buttons" type="button" onclick="show_stage2()">Proxima</button>
+        </div>
     </div>
 
-    <div id="stage-2" style="display: none">
+    <div id="stage-2" style="display: none ;gap: 15px;">
+        <h1 class="Register-show">Cadastrar</h1>
+        <div class="div-stages">
+            <div class="complete-stages"><span>1</span></div>
+            <div class="complete-stages stage-complete"><span>2</span></div>
+            <div class="complete-stages"><span>3</span></div>
+        </div>
         <div class="format">
 
             <select id="uf" name="UF" class="inputs-forms" required>
@@ -91,13 +107,19 @@
             <label class="label-forms" for="Complement">Complemento:</label>
             <span class="error-text" id="error-Complement"></span>
         </div>
-
-        <button class="buttons" type="button" onclick="back_stage2()">Voltar</button>
-        <button class="buttons" type="button" onclick="show_stage3()">Proxima</button>
-
+        <div id="buttons-format">
+            <button class="buttons" type="button" onclick="back_stage2()">Voltar</button>
+            <button class="buttons" type="button" onclick="show_stage3()">Proxima</button>
+        </div>
     </div>
 
-    <div id="stage-3" style="display: none">
+    <div id="stage-3" style="display: none; gap: 20px;">
+        <h1 class="Register-show">Cadastrar</h1>
+        <div class="div-stages">
+            <div class="complete-stages"><span>1</span></div>
+            <div class="complete-stages"><span>2</span></div>
+            <div class="complete-stages stage-complete"><span>3</span></div>
+        </div>
         <div class="format">
 
             <input class="inputs-forms" type="text" id="Email" name="Email" />
@@ -111,13 +133,15 @@
             <label class="label-forms" for="Password">Senha:</label>
             <span class="error-text" id="error-Password"></span>
         </div>
-
-        <button class="buttons" type="button" onclick="back_stage3()">voltar</button>
-        <button class="buttons" type="button" onclick="validar_etapa3()">Cadastrar</button>
+        <div id="buttons-format">
+            <button class="buttons" type="button" onclick="back_stage3()">voltar</button>
+            <button class="buttons" type="button" onclick="validar_etapa3()">Cadastrar</button>
+        </div>
     </div>
 </form>
 
-<form id="form-login" asp-controller="Account" asp-action="Login" enctype="application/x-www-form-urlencoded " style="display: none" class="forms-login">
+<form id="form-login" asp-controller="Account" asp-action="Login" enctype="application/x-www-form-urlencoded "
+    style="display: none;gap: 20px;" class="forms-login">
     <div class="format">
         <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" />
         <label class="label-forms" for="Cnpj-login">Cnpj:</label>
@@ -129,9 +153,10 @@
         <label class="label-forms" for="Password-login">Senha:</label>
         <span class="error-text" id="error-Password-login"></span>
     </div>
-
-    <button class="buttons" type="button" onclick="back_login()">voltar</button>
-    <button class="buttons" type="button" onclick="validacao_login()">Logar</button>
+    <div id="buttons-format">
+        <button class="buttons" type="button" onclick="back_login()">voltar</button>
+        <button class="buttons" type="button" onclick="validacao_login()">Logar</button>
+    </div>
 </form>
 
 @section scripts {
