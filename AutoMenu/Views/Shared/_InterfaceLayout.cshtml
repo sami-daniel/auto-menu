@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var Model = (RestaurantResponse)ViewBag.ViewModelTRestaurantResponse;
+}
+
+<!DOCTYPE html>
 
 <html>
 
@@ -26,7 +30,15 @@
          
             <div id="div-user">
                 <img src="User-standard.png" alt="Usuario Padrão" asp-append-version="true">
-                <h4>nome restaurante</h4>
+                <h4>@if (Model == null)
+                    {
+                        Html.Raw("Não existente");
+                    }
+                    else
+                    {
+                        Html.Raw(Model.Name);
+                    }
+                </h4>
                 <h6>Restaurante</h6>
             </div>
         </header>
