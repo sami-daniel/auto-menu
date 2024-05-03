@@ -2,7 +2,7 @@
     <button type="button" class="button-choice-style" id="register" onclick="btn_register()">Cadastro</button>
     <button type="button" class="button-choice-style" id="logar" onclick="btn_logar()">Logar</button>
 </div>
-<form id="form-register" asp-controller="Account" asp-action="Create" method="POST" style="display: none" class="forms-login">
+<form id="form-register" asp-controller="Account" asp-action="Create" enctype="application/x-www-form-urlencoded" method="POST" style="display: none" class="forms-login">
 
     <div id="stage-1">
         <div class="format">
@@ -117,7 +117,7 @@
     </div>
 </form>
 
-<form id="form-login" asp-controller="Account" asp-action="Login" style="display: none" class="forms-login">
+<form id="form-login" asp-controller="Account" asp-action="Login" enctype="application/x-www-form-urlencoded " style="display: none" class="forms-login">
     <div class="format">
         <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" />
         <label class="label-forms" for="Cnpj-login">Cnpj:</label>
