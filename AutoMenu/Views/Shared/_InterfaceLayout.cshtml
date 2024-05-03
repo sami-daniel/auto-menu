@@ -32,11 +32,11 @@
                 <img src="User-standard.png" alt="Usuario Padrão" asp-append-version="true">
                 <h4>@if (Model == null)
                     {
-                        Html.Raw("Não existente");
+                        <text>Usuario: Não registrado</text>
                     }
                     else
                     {
-                        Html.Raw(Model.Name);
+                        <text>Bem-vindo, @Model.Name!</text>
                     }
                 </h4>
                 <h6>Restaurante</h6>
