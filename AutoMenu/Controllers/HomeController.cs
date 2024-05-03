@@ -7,8 +7,6 @@ namespace AutoMenu.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.Css = "home.css";
-            // metodo IActionResult para a pagina index principal
             return View();
         }
     }

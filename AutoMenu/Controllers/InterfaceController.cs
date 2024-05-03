@@ -22,7 +22,6 @@ namespace AutoMenu.Controllers
             //Nao o if
 
             ViewBag.ViewModelTRestaurantResponse = HttpContext.Session.GetObject<RestaurantResponse>("User");
-            ViewBag.Css = "Interface.css";
             return View();
         }
     }

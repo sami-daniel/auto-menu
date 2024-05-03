@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="~/Layout.css">
     <link rel="stylesheet" href="~/@ViewBag.Css">
     <title>@ViewBag.Title</title>
+    @await RenderSectionAsync("styles", required: false)
 </head>
 <body>
     @*Codigo do layout aki*@
