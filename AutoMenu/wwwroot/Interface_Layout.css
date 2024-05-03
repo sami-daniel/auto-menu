@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fdf9ed;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 55px;
+  width: 100%;
+  border-bottom: solid gray;
+}
+
+#div-logo-hamburguer {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+}
+
+#div-logo-hamburguer div svg {
+  height: 30px;
+  width: 30px;
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+
+#div-logo-hamburguer h1 {
+  font-size: 28px;
+}
+
+#div-user {
+  display: grid;
+  grid-template-columns: 70px 200px 25px;
+  grid-template-rows: 1fr 1fr;
+}
+
+#div-user img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    left: 5px;
+    top: 5px;
+
+}
+
+#div-user svg{
+position: relative;
+left: 35px;
+top: 35px;
+}
