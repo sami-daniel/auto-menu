@@ -71,7 +71,7 @@ namespace Services.DTO.Responses
     }
 
     /// <summary>
-    /// Extension class for the Restaurant entity, providing methods to convert a restaurant to a restaurant response.
+    /// Extension class for the Restaurant etity, providing methods to convert a restaurant to a restaurant response.
     /// </summary>
     public static class RestaurantExtensions
     {
