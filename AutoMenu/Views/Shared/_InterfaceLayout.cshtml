@@ -28,7 +28,7 @@
                     <h1>AUTO MENU</h1>
                 </a>
             </div>
-         
+
             <div id="div-user">
                 <img src="~/images/User-standard.png" alt="Usuario Padrão" asp-append-version="true">
                 <h4>@if (Model == null)
@@ -44,6 +44,17 @@
             </div>
         </header>
 
+        <div>
+            <nav>
+                <div>
+                    <navlink href="Cadastro">
+                        <span>Cadastro</span>
+                    </navlink>
+                </div>
+                <div></div>
+                <div></div>
+            </nav>
+        </div>
         <div>
             @RenderBody()
         </div>
