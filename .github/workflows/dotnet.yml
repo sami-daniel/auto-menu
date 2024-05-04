@@ -32,7 +32,15 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
+    
+    - name: Clean Sln
+      run: dotnet clean
+      working-directory: AutoMenu
+    
+    - name: Build Sln
+      run: dotnet build
+      working-directory: AutoMenu
+
     - name: Restore NuGet packages
       run: dotnet restore
       working-directory: AutoMenu
