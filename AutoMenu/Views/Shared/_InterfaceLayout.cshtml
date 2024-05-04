@@ -9,7 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/Interface_Layout.css">
+    <link rel="stylesheet" href="~/css/Interface_Layout.css">
     @await RenderSectionAsync("styles", required: false)
 </head>
 
@@ -30,7 +30,7 @@
             </div>
          
             <div id="div-user">
-                <img src="User-standard.png" alt="Usuario Padrão" asp-append-version="true">
+                <img src="~/images/User-standard.png" alt="Usuario Padrão" asp-append-version="true">
                 <h4>@if (Model == null)
                     {
                         <text>Usuario: Não registrado</text>
