@@ -38,10 +38,13 @@ jobs:
       working-directory: AutoMenu
       
     - name: Analyzers Format
-      run: dotnet format analyzers AutoMenu/AutoMenu.sln -v diag
+      run: dotnet format analyzers -v diag
+      working-directory: AutoMenu
       
     - name: Style Format
-      run: dotnet format style AutoMenu/AutoMenu.sln -v diag
-      
+      run: dotnet format style -v diag
+      working-directory: AutoMenu
+
     - name: Whitespace Format
-      run: dotnet format whitespace AutoMenu/AutoMenu.sln -v diag
+      run: dotnet format whitespace -v diag
+      working-directory: AutoMenu
