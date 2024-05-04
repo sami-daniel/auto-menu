@@ -43,9 +43,9 @@ namespace Services.DTO.Responses
         /// Gets the email of the restaurant.
         /// </summary>
         public string Email { get; } = null!;
-        
+
         /// <summary>
-        /// Gets the PasswordHas of the restaurant.
+        /// Gets the PasswordHash of the restaurant.
         /// </summary>
         public string PasswordHash { get; } = null!;
 
@@ -71,7 +71,7 @@ namespace Services.DTO.Responses
     }
 
     /// <summary>
-    /// Extension class for the Restaurant entity, providing methods to convert a restaurant to a restaurant response.
+    /// Extension class for the Restaurant etity, providing methods to convert a restaurant to a restaurant response.
     /// </summary>
     public static class RestaurantExtensions
     {
@@ -81,7 +81,7 @@ namespace Services.DTO.Responses
         /// <param name="restaurant">The restaurant to be converted.</param>
         /// <returns>An instance of RestaurantResponse containing the restaurant information.</returns>
         public static RestaurantResponse ToRestaurantResponse(this Restaurant restaurant) =>
-            new RestaurantResponse(iD: restaurant.IdRestaurant,
+            new(iD: restaurant.IdRestaurant,
                                    cnpj: restaurant.Cnpj,
                                    name: restaurant.Name,
                                    email: restaurant.Email,

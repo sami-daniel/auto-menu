@@ -54,7 +54,7 @@ namespace Services.DTO.AddRequests
         /// </summary>
         /// <returns>A new object of type Address based on the current AddressAddRequest object.</returns>
 #pragma warning restore CS8618
-        public Address ToAddress() => new Address()
+        public Address ToAddress() => new()
         {
             Uf = UF,
             City = City,
