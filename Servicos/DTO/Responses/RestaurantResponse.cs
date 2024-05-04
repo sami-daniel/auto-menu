@@ -45,7 +45,7 @@ namespace Services.DTO.Responses
         public string Email { get; } = null!;
 
         /// <summary>
-        /// Gets the PasswordHas of the restaurant.
+        /// Gets the PasswordHash of the restaurant.
         /// </summary>
         public string PasswordHash { get; } = null!;
 
