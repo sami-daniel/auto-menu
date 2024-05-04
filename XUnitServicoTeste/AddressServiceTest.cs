@@ -31,7 +31,7 @@ namespace XUnitServicoTeste
         public async Task AddEnderecoAsync_EnderecoAddRequestInvalido()
         {
             //Arrange
-            AddressAddRequest? enderecoAddRequest = new AddressAddRequest()
+            AddressAddRequest? enderecoAddRequest = new()
             {
                 UF = "MG12131", //Nao pode conter mais de duas letras
                 District = "", //Nao pode ser vazio
@@ -50,7 +50,7 @@ namespace XUnitServicoTeste
         public async Task AddEnderecoAsync_EnderecoAddRequestAdicionadoCorretamente()
         {
             //Arrange
-            AddressAddRequest? enderecoAddRequest = new AddressAddRequest()
+            AddressAddRequest? enderecoAddRequest = new()
             {
                 UF = "MG",
                 District = "Alto Vera Cruz",

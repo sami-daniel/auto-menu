@@ -56,7 +56,7 @@ namespace Services.DTO.AddRequests
         /// </summary>
         /// <returns>A new object of type Restaurant based on the data from the current RestaurantAddRequest object.</returns>
 #pragma warning restore CS8618
-        public Restaurant ToRestaurant() => new Restaurant()
+        public Restaurant ToRestaurant() => new()
         {
             Cnpj = CNPJ,
             Name = Name,

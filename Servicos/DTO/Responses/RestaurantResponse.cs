@@ -43,7 +43,7 @@ namespace Services.DTO.Responses
         /// Gets the email of the restaurant.
         /// </summary>
         public string Email { get; } = null!;
-        
+
         /// <summary>
         /// Gets the PasswordHas of the restaurant.
         /// </summary>
@@ -81,7 +81,7 @@ namespace Services.DTO.Responses
         /// <param name="restaurant">The restaurant to be converted.</param>
         /// <returns>An instance of RestaurantResponse containing the restaurant information.</returns>
         public static RestaurantResponse ToRestaurantResponse(this Restaurant restaurant) =>
-            new RestaurantResponse(iD: restaurant.IdRestaurant,
+            new(iD: restaurant.IdRestaurant,
                                    cnpj: restaurant.Cnpj,
                                    name: restaurant.Name,
                                    email: restaurant.Email,

@@ -6,13 +6,13 @@ namespace Services.Helpers
     {
         public static bool IsValid(object obj)
         {
-            ValidationContext validationContext = new ValidationContext(obj);
+            ValidationContext validationContext = new(obj);
 
             List<ValidationResult> validationResults = new List<ValidationResult>();
 
             bool isValid = Validator.TryValidateObject(obj, validationContext, validationResults);
 
-            if(!isValid) 
+            if (!isValid)
             {
                 return false;
             }

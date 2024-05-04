@@ -102,7 +102,7 @@ namespace Services.DTO.Responses
         /// <param name="address">The Address object to be converted.</param>
         /// <returns>The corresponding AddressResponse object.</returns>
         public static AddressResponse ToAddressResponse(this Address address) =>
-            new AddressResponse(addressID: address.IdAddress,
+            new(addressID: address.IdAddress,
                                 uF: address.Uf,
                                 city: address.City,
                                 district: address.District,
