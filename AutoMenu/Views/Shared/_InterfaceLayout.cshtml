@@ -18,15 +18,17 @@
         <header>
             <div id="div-logo-hamburguer">
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-                    <path fill="currentColor"
-                        d="M228 128a12 12 0 0 1-12 12H40a12 12 0 0 1 0-24h176a12 12 0 0 1 12 12M40 76h176a12 12 0 0 0 0-24H40a12 12 0 0 0 0 24m176 104H40a12 12 0 0 0 0 24h176a12 12 0 0 0 0-24">
-                    </path>
-                </svg>
+                <div id="div-func-hamburguer" onclick="show_func_hamburguer()">
+                    <label class="burger" for="burger">
+                        <input type="checkbox" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <span id="Text-hamburguer">Explore</span>
+                </div>
+                <h1>AUTO MENU</h1>
 
-                <a href="~/Interface.cshtml">
-                    <h1>AUTO MENU</h1>
-                </a>
             </div>
 
             <div id="div-user">
@@ -44,17 +46,18 @@
             </div>
         </header>
 
-        <div>
+        <section id="menu-nav" style="display: none;">
             <nav>
                 <div>
-                    <navlink href="Cadastro">
+                    <a href="~/Cadastro">
                         <span>Cadastro</span>
-                    </navlink>
+                    </a>
                 </div>
                 <div></div>
                 <div></div>
             </nav>
-        </div>
+        </section>
+        <script src="~/js/Interface_Layout.js"></script>
         <div>
             @RenderBody()
         </div>
