@@ -65,29 +65,13 @@ body {
 
 .format {
   position: relative;
+  margin: 20px 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
 }
-.format:nth-child(2) {
-  margin-top: 2%;
-}
-.format:nth-child(3) {
-  margin-top: 2%;
-}
-.format:nth-child(4) {
-  margin-top: 2%;
-}
-.format:nth-child(5) {
-  margin-top: 2%;
-}
-.format:nth-child(6) {
-  margin-top: 2%;
-}
-.format:last-child {
-  margin-top: 2%;
-}
+
 .content-forms {
   padding: 50px;
 }
@@ -119,6 +103,7 @@ body {
 
 .buttons-format {
   width: 100%;
+  margin: 40px 0 0 0;
   display: flex;
   justify-content: space-between;
 }
@@ -142,6 +127,7 @@ body {
 }
 
 .inputs-forms {
+  width: 100%;
   font-size: 1.1em;
   border: none;
   border-bottom: 2px solid #1298ee;
@@ -152,7 +138,7 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.inputs-forms::placeholder{
+.inputs-forms::placeholder {
   color: gray;
 }
 
@@ -171,7 +157,7 @@ body {
 
 .inputs-forms:focus + .label-forms,
 .inputs-forms:valid + .label-forms {
-  left:0px;
+  left: 0px;
   top: -20px;
   font-size: 12px;
   color: #1298ee;
@@ -180,6 +166,9 @@ body {
 .error-text {
   color: #8f0202;
   font-size: 13px;
+  position: absolute;
+  top: 30px;
+  left: 2px;
 }
 
 .btn-lock {
@@ -199,10 +188,10 @@ body {
 
 .btn-lock svg {
   fill: none;
-    transform: translate3d(0, 0, 0);
-    position: relative;
-    top: -10px;
-    left: -12px;
+  transform: translate3d(0, 0, 0);
+  position: relative;
+  top: -10px;
+  left: -12px;
 }
 
 .btn-lock svg .bling {

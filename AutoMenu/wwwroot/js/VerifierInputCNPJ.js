@@ -12,7 +12,7 @@
                     $('#availabe-cnpj').text('CNPJ Inválido'); // Use .text() para definir o texto do elemento
                 }
                 else {
-                    $('#availabe-cnpj').text('CNPJ Válido');
+                    $('#availabe-cnpj').text('');
                 }
             },
             error: (xhr, status, error) => {
