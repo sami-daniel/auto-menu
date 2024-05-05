@@ -9,14 +9,14 @@
             data: JSON.stringify(inputCnpj), // Apenas envie a string diretamente
             success: (response) => {
                 if (response === 'Invalid CNPJ') {
-                    $('#error-Cnpj').text('CNPJ Inválido'); // Use .text() para definir o texto do elemento
+                    $('#availabe-cnpj').text('CNPJ Inválido'); // Use .text() para definir o texto do elemento
                 }
                 else {
-                    $('#error-Cnpj').text('CNPJ Válido');
+                    $('#availabe-cnpj').text('CNPJ Válido');
                 }
             },
             error: (xhr, status, error) => {
-                $('#error-Cnpj').text('CNPJ Inválido');
+                $('#availabe-cnpj').text('CNPJ Inválido');
             }
         });
     });
