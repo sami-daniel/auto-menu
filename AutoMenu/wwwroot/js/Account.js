@@ -345,6 +345,8 @@ function back_login() {
 function mascaraCNPJ() {
     var cnpjCadastro = document.getElementById("Cnpj").value;
 
+    const maxlengthcnpj = 18;
+
     cnpjCadastro = cnpjCadastro.replace(/\D/g,"");
 
     var cnpjFormatado = cnpjCadastro;
@@ -372,11 +374,17 @@ function mascaraCNPJ() {
         }
     }
 
+    if (cnpjFormatado.length > maxlengthcnpj) {
+        cnpjFormatado = cnpjFormatado.slice(0, maxlengthcnpj)
+    }
+
     document.getElementById("Cnpj").value = cnpjFormatado;
 }
 
 function mascaraCNPJLogin() {
     var cnpjLogin = document.getElementById("Cnpj-login").value;
+
+    const maxlengthcnpj = 18;
 
     cnpjLogin = cnpjLogin.replace(/\D/g, "");
 
@@ -403,6 +411,10 @@ function mascaraCNPJLogin() {
         if (cnpjLoginFormatado[15] != undefined) {
             cnpjLoginFormatado = cnpjLoginFormatado.slice(0, 15) + "-" + cnpjLoginFormatado.slice(15);
         }
+    }
+
+    if (cnpjLoginFormatado.length > maxlengthcnpj) {
+        cnpjLoginFormatado = cnpjLoginFormatado.slice(0, maxlengthcnpj)
     }
 
     document.getElementById("Cnpj-login").value = cnpjLoginFormatado;
