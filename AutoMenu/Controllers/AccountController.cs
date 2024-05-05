@@ -69,5 +69,19 @@ namespace AutoMenu.Controllers
 
             return RedirectToActionPermanent("", "Interface");
         }
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<IActionResult> CheckCNPJAvailability([FromBody] string CNPJ)
+        {
+            if (string.IsNullOrEmpty(CNPJ)) return BadRequest();
+            var restaurants = await _restaurantService.GetAllRestaurantsAsync();
+
+
+            if(restaurants.FirstOrDefault(restaurant => restaurant.Cnpj == CNPJ) == null)
+                return Ok("Valid CNPJ");
+
+            return Ok("Invalid CNPJ");
+
+        }
     }
 }
