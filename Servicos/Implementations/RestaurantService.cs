@@ -10,9 +10,9 @@ namespace Services.Implementations
 {
     public class RestaurantService : IRestaurantService
     {
-        private readonly AutomenuDbContext _db;
+        private readonly AutoMenuDbContext _db;
 
-        public RestaurantService(AutomenuDbContext dbContext)
+        public RestaurantService(AutoMenuDbContext dbContext)
         {
             _db = dbContext;
         }

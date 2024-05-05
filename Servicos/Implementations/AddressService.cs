@@ -9,8 +9,8 @@ namespace Services.Implementations
 {
     public class AddressService : IAddressService
     {
-        private readonly AutomenuDbContext _db;
-        public AddressService(AutomenuDbContext dbContext)
+        private readonly AutoMenuDbContext _db;
+        public AddressService(AutoMenuDbContext dbContext)
         {
             _db = dbContext;
         }

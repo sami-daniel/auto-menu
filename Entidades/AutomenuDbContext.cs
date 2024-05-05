@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities;
 
-public partial class AutomenuDbContext : DbContext
+public partial class AutoMenuDbContext : DbContext
 {
-    public AutomenuDbContext(DbContextOptions<AutomenuDbContext> options)
+    public AutoMenuDbContext(DbContextOptions<AutoMenuDbContext> options)
         : base(options)
     {
     }

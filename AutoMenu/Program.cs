@@ -11,7 +11,7 @@ namespace AutoMenu
             //servicos
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AutomenuDbContext>();
+            builder.Services.AddDbContext<AutoMenuDbContext>();
             builder.Services.AddScoped<IAddressService, AddressService>();
             builder.Services.AddScoped<IRestaurantService, RestaurantService>();
             builder.Services.AddSession();
