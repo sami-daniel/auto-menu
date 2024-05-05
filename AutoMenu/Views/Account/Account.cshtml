@@ -1,4 +1,4 @@
-@section styles{
+@section styles {
     <link href="~/css/Account.css" rel="stylesheet" />
 }
 
@@ -21,6 +21,21 @@
             <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" required />
             <label class="label-forms" for="Cnpj">Cnpj:</label>
             <span class="error-text" id="error-Cnpj"></span>
+            <script>
+                document.getElementById('Cnpj').addEventListener('input', function (event) {
+                    var cnpj = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+                    if (cnpj.length > 14) {
+                        cnpj = cnpj.slice(0, 14); // Limita a 14 caracteres
+                    }
+                    if (cnpj.length > 12) {
+                        cnpj = cnpj.replace(/^(\d{2})(\d)/, '$1.$2'); // Insere ponto após os dois primeiros dígitos
+                        cnpj = cnpj.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); // Insere ponto após o quinto dígito
+                        cnpj = cnpj.replace(/\.(\d{3})(\d)/, '.$1/$2'); // Insere barra após o oitavo dígito
+                        cnpj = cnpj.replace(/(\d{4})(\d)/, '$1-$2'); // Insere hífen após o décimo segundo dígito
+                    }
+                    event.target.value = cnpj;
+                });
+            </script>
         </div>
 
         <div class="format">
@@ -86,7 +101,7 @@
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="District" name="District" required  />
+            <input class="inputs-forms" type="text" id="District" name="District" required />
             <label class="label-forms" for="District">Bairro:</label>
             <span class="error-text" id="error-District"></span>
         </div>
@@ -100,7 +115,7 @@
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="Number" name="Number" required  />
+            <input class="inputs-forms" type="text" id="Number" name="Number" required />
             <label class="label-forms" for="Number">Numero:</label>
             <span class="error-text" id="error-Number"></span>
         </div>
@@ -150,10 +165,25 @@
         <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" required />
         <label class="label-forms" for="Cnpj-login">Cnpj:</label>
         <span class="error-text" id="error-Cnpj-login"></span>
+        <script>
+                document.getElementById('Cnpj-login').addEventListener('input', function (event) {
+                    var cnpj_login = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+                    if (cnpj_login.length > 14) {
+                        cnpj_login = cnpj_login.slice(0, 14); // Limita a 14 caracteres
+                    }
+                    if (cnpj_login.length > 12) {
+                        cnpj_login = cnpj_login.replace(/^(\d{2})(\d)/, '$1.$2'); // Insere ponto após os dois primeiros dígitos
+                        cnpj_login = cnpj_login.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); // Insere ponto após o quinto dígito
+                        cnpj_login = cnpj_login.replace(/\.(\d{3})(\d)/, '.$1/$2'); // Insere barra após o oitavo dígito
+                        cnpj_login = cnpj_login.replace(/(\d{4})(\d)/, '$1-$2'); // Insere hífen após o décimo segundo dígito
+                    }
+                    event.target.value = cnpj_login;
+                });
+            </script>
     </div>
 
     <div class="format">
-        <input class="inputs-forms" type="password" id="Password-login" name="password" required/>
+        <input class="inputs-forms" type="password" id="Password-login" name="password" required />
         <label class="label-forms" for="Password-login">Senha:</label>
         <span class="error-text" id="error-Password-login"></span>
     </div>
