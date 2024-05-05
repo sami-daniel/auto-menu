@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Layout.css">
+    <link rel="stylesheet" href="~/@ViewBag.Css">
+    <title>@ViewBag.Title</title>
+    @await RenderSectionAsync("styles", required: false)
+</head>
+<body>
+    @*Codigo do layout aki*@
+    @RenderBody()
+    @await RenderSectionAsync("scripts", required: false)
+</body>
+</html>

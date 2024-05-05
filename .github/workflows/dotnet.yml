@@ -1,0 +1,51 @@
+name: .NET Workflow
+
+on:
+  push:
+    branches:
+      - feature/**
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Clean Sln
+      run: dotnet clean
+      working-directory: AutoMenu
+      
+    - name: Restore NuGet packages
+      run: dotnet restore
+      working-directory: AutoMenu
+      
+    - name: Build project
+      run: dotnet build
+      working-directory: AutoMenu
+
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Restore NuGet packages
+      run: dotnet restore
+      working-directory: AutoMenu
+      
+    - name: Analyzers Format
+      run: dotnet format analyzers AutoMenu/AutoMenu.sln -v diag
+      
+    - name: Style Format
+      run: dotnet format style AutoMenu/AutoMenu.sln -v diag
+
+    - name: Whitespace Format
+      run: dotnet format whitespace AutoMenu/AutoMenu.sln -v diag

@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #fdf9ed;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 45px;
+  width: 100%;
+  border: 1px solid rgba(48, 47, 47, 0.2);
+}
+
+#div-logo-hamburguer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#div-func-hamburguer {
+  display: flex;
+  border: 1px solid rgb(0 0 0 / 80%);
+  height: 30px;
+  position: relative;
+  top: 5px;
+  left: 10px;
+  border-radius: 5px;
+  width: 120px;
+  cursor: pointer;
+}
+
+#Text-hamburguer {
+  position: relative;
+  top: 6px;
+  left: 10px;
+}
+
+.burger {
+  position: relative;
+  top: 8px;
+  left: 6px;
+  width: 19px;
+  height: 14px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 2px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 14px;
+  left: 2px;
+}
+
+#div-logo-hamburguer h1 {
+  position: relative;
+  top: 8px;
+  left: 15px;
+  font-size: 21px;
+  color: black;
+  text-decoration: none;
+}
+
+#div-user {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  position: absolute;
+  right: 15px;
+}
+
+#div-user img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  grid-row: span 2;
+}
+
+#div-user h4 {
+  font-size: 15px;
+  position: relative;
+  top: 3px;
+  left: -20px;
+}
+
+#div-user h6 {
+  font-size: 12px;
+  position: relative;
+  top: 2px;
+  left: -20px;
+}
+
+#menu-nav {
+  width: 220px;
+  height: 100vh;
+  background-color: #1a1a19;
+}
