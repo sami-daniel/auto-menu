@@ -317,3 +317,8 @@ function back_login() {
         form_login.style.display = "none";
     }
 }
+
+
+function mascaraCNPJ() {
+
+}

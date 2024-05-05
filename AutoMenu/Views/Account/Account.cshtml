@@ -18,18 +18,18 @@
         </div>
 
         <div class="format">
-            <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" />
+            <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" required />
             <label class="label-forms" for="Cnpj">Cnpj:</label>
             <span class="error-text" id="error-Cnpj"></span>
         </div>
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="Name" name="Name" maxlength="80" />
+            <input class="inputs-forms" type="text" id="Name" name="Name" maxlength="80" required />
             <label class="label-forms" for="Name">Nome</label>
             <span class="error-text" id="error-Name"></span>
         </div>
-        <div id="buttons-format">
+        <div class="buttons-format">
             <button class="buttons" type="button" onclick="back_stage1()">Voltar</button>
             <button class="buttons" type="button" onclick="show_stage2()">Proxima</button>
         </div>
@@ -79,39 +79,39 @@
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="City" name="City" />
+            <input class="inputs-forms" type="text" id="City" name="City" required />
             <label class="label-forms" for="City">Cidade:</label>
             <span class="error-text" id="error-City"></span>
         </div>
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="District" name="District" />
-            <label class="label-forms" for="District">Bairo:</label>
+            <input class="inputs-forms" type="text" id="District" name="District" required  />
+            <label class="label-forms" for="District">Bairro:</label>
             <span class="error-text" id="error-District"></span>
         </div>
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="Address" name="Street" />
+            <input class="inputs-forms" type="text" id="Address" name="Street" required />
             <label class="label-forms" for="Address">Logradouro:</label>
             <span class="error-text" id="error-Address"></span>
         </div>
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="Number" name="Number" />
+            <input class="inputs-forms" type="text" id="Number" name="Number" required  />
             <label class="label-forms" for="Number">Numero:</label>
             <span class="error-text" id="error-Number"></span>
         </div>
 
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="Complement" name="Complement" />
+            <input class="inputs-forms" type="text" id="Complement" name="Complement" required />
             <label class="label-forms" for="Complement">Complemento:</label>
             <span class="error-text" id="error-Complement"></span>
         </div>
-        <div id="buttons-format">
+        <div class="buttons-format">
             <button class="buttons" type="button" onclick="back_stage2()">Voltar</button>
             <button class="buttons" type="button" onclick="show_stage3()">Proxima</button>
         </div>
@@ -126,18 +126,18 @@
         </div>
         <div class="format">
 
-            <input class="inputs-forms" type="text" id="Email" name="Email" />
+            <input class="inputs-forms" type="text" id="Email" name="Email" required />
             <label class="label-forms" for="Email">Email:</label>
             <span class="error-text" id="error-Email"></span>
         </div>
 
         <div class="format">
 
-            <input class="inputs-forms" type="password" id="Password" name="Password" />
+            <input class="inputs-forms" type="password" id="Password" name="Password" required />
             <label class="label-forms" for="Password">Senha:</label>
             <span class="error-text" id="error-Password"></span>
         </div>
-        <div id="buttons-format">
+        <div class="buttons-format">
             <button class="buttons" type="button" onclick="back_stage3()">voltar</button>
             <button class="buttons" type="button" onclick="validar_etapa3()">Cadastrar</button>
         </div>
@@ -147,17 +147,17 @@
 <form id="form-login" asp-controller="Account" asp-action="Login" enctype="application/x-www-form-urlencoded "
     style="display: none;gap: 20px;" class="forms-login">
     <div class="format">
-        <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" />
+        <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" required />
         <label class="label-forms" for="Cnpj-login">Cnpj:</label>
         <span class="error-text" id="error-Cnpj-login"></span>
     </div>
 
     <div class="format">
-        <input class="inputs-forms" type="password" id="Password-login" name="password" />
+        <input class="inputs-forms" type="password" id="Password-login" name="password" required/>
         <label class="label-forms" for="Password-login">Senha:</label>
         <span class="error-text" id="error-Password-login"></span>
     </div>
-    <div id="buttons-format">
+    <div class="buttons-format">
         <button class="buttons" type="button" onclick="back_login()">voltar</button>
         <button class="buttons" type="button" onclick="validacao_login()">Logar</button>
     </div>
