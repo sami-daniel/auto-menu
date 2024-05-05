@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $('#Cnpj').keyup(function () {
+    $('#Cnpj').blur(function () {
         var inputCnpj = $(this).val();
 
         $.ajax({
