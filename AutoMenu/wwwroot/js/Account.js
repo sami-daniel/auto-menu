@@ -320,5 +320,67 @@ function back_login() {
 
 
 function mascaraCNPJ() {
+    var cnpjCadastro = document.getElementById("Cnpj").value;
 
+    cnpjCadastro = cnpjCadastro.replace(/\D/g,"");
+
+    var cnpjFormatado = cnpjCadastro;
+
+    if (cnpjFormatado[2] != ".") {
+        if (cnpjFormatado[2] != undefined) {
+            cnpjFormatado = cnpjFormatado.slice(0, 2) + "." + cnpjFormatado.slice(2);
+        }
+    }
+
+    if (cnpjFormatado[6] != ".") {
+        if (cnpjFormatado[6] != undefined) {
+            cnpjFormatado = cnpjFormatado.slice(0, 6) + "." + cnpjFormatado.slice(6);
+        }
+    }
+
+    if (cnpjFormatado[10] != "/") {
+        if (cnpjFormatado[10] != undefined) {
+            cnpjFormatado = cnpjFormatado.slice(0, 10) + "/" + cnpjFormatado.slice(10);
+        }
+    }
+    if (cnpjFormatado[15] != "-") {
+        if (cnpjFormatado[15] != undefined) {
+            cnpjFormatado = cnpjFormatado.slice(0, 15) + "-" + cnpjFormatado.slice(15);
+        }
+    }
+
+    document.getElementById("Cnpj").value = cnpjFormatado;
+}
+
+function mascaraCNPJLogin() {
+    var cnpjLogin = document.getElementById("Cnpj-login").value;
+
+    cnpjLogin = cnpjLogin.replace(/\D/g, "");
+
+    var cnpjLoginFormatado = cnpjLogin;
+
+    if (cnpjLoginFormatado[2] != ".") {
+        if (cnpjLoginFormatado[2] != undefined) {
+            cnpjLoginFormatado = cnpjLoginFormatado.slice(0, 2) + "." + cnpjLoginFormatado.slice(2);
+        }
+    }
+
+    if (cnpjLoginFormatado[6] != ".") {
+        if (cnpjLoginFormatado[6] != undefined) {
+            cnpjLoginFormatado = cnpjLoginFormatado.slice(0, 6) + "." + cnpjLoginFormatado.slice(6);
+        }
+    }
+
+    if (cnpjLoginFormatado[10] != "/") {
+        if (cnpjLoginFormatado[10] != undefined) {
+            cnpjLoginFormatado = cnpjLoginFormatado.slice(0, 10) + "/" + cnpjLoginFormatado.slice(10);
+        }
+    }
+    if (cnpjLoginFormatado[15] != "-") {
+        if (cnpjLoginFormatado[15] != undefined) {
+            cnpjLoginFormatado = cnpjLoginFormatado.slice(0, 15) + "-" + cnpjLoginFormatado.slice(15);
+        }
+    }
+
+    document.getElementById("Cnpj-login").value = cnpjLoginFormatado;
 }

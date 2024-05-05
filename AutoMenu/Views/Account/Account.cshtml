@@ -18,7 +18,7 @@
         </div>
 
         <div class="format">
-            <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" required />
+            <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" oninput="mascaraCNPJ()" required />
             <label class="label-forms" for="Cnpj">Cnpj:</label>
             <span class="error-text" id="error-Cnpj"></span>
         </div>
@@ -147,7 +147,7 @@
 <form id="form-login" asp-controller="Account" asp-action="Login" enctype="application/x-www-form-urlencoded "
     style="display: none;gap: 20px;" class="forms-login">
     <div class="format">
-        <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" required />
+        <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" required oninput="mascaraCNPJLogin()" />
         <label class="label-forms" for="Cnpj-login">Cnpj:</label>
         <span class="error-text" id="error-Cnpj-login"></span>
     </div>
