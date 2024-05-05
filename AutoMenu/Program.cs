@@ -12,7 +12,7 @@ namespace AutoMenu
             //servicos
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AutoMenuDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("AutoMenu"), new MySqlServerVersion("8.2.0")));
+            builder.Services.AddDbContext<AutoMenuDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("AutoMenu"), Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql")));
             //String de conexão deve ser setada como segredo de usuario ou variavel de ambiente pelo powershell
             builder.Services.AddScoped<IAddressService, AddressService>();
             builder.Services.AddScoped<IRestaurantService, RestaurantService>();
