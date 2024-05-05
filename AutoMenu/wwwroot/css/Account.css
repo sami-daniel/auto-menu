@@ -167,7 +167,7 @@ body {
 .inputs-forms:focus ~ .label-forms,
 .inputs-forms:valid ~ .label-forms {
   font-size: 0.75em;
-  top: -15px;
+  top: -16px;
 }
 
 .error-text {
