@@ -18,24 +18,11 @@
         </div>
 
         <div class="format">
-            <input class="inputs-forms" placeholder="Cnpj 11.222.333/4444-55" type="text" id="Cnpj" name="CNPJ" maxlength="18" required />
-            <label class="label-forms" for="Cnpj">Cnpj</label>
+
+            <input class="inputs-forms" type="text" id="Cnpj" name="CNPJ" maxlength="18" oninput="mascaraCNPJ()" required />
+            <label class="label-forms" for="Cnpj">Cnpj:</label>
+
             <span class="error-text" id="error-Cnpj"></span>
-            <script>
-                document.getElementById('Cnpj').addEventListener('input', function (event) {
-                    var cnpj = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-                    if (cnpj.length > 14) {
-                        cnpj = cnpj.slice(0, 14); // Limita a 14 caracteres
-                    }
-                    if (cnpj.length > 12) {
-                        cnpj = cnpj.replace(/^(\d{2})(\d)/, '$1.$2'); // Insere ponto após os dois primeiros dígitos
-                        cnpj = cnpj.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); // Insere ponto após o quinto dígito
-                        cnpj = cnpj.replace(/\.(\d{3})(\d)/, '.$1/$2'); // Insere barra após o oitavo dígito
-                        cnpj = cnpj.replace(/(\d{4})(\d)/, '$1-$2'); // Insere hífen após o décimo segundo dígito
-                    }
-                    event.target.value = cnpj;
-                });
-            </script>
         </div>
 
         <div class="format">
@@ -162,24 +149,9 @@
 <form id="form-login" asp-controller="Account" asp-action="Login" enctype="application/x-www-form-urlencoded "
     style="display: none;gap: 20px;" class="forms-login">
     <div class="format">
-        <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" required />
+        <input class="inputs-forms" type="text" id="Cnpj-login" name="CNPJ" required oninput="mascaraCNPJLogin()" />
         <label class="label-forms" for="Cnpj-login">Cnpj:</label>
         <span class="error-text" id="error-Cnpj-login"></span>
-        <script>
-                document.getElementById('Cnpj-login').addEventListener('input', function (event) {
-                    var cnpj_login = event.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-                    if (cnpj_login.length > 14) {
-                        cnpj_login = cnpj_login.slice(0, 14); // Limita a 14 caracteres
-                    }
-                    if (cnpj_login.length > 12) {
-                        cnpj_login = cnpj_login.replace(/^(\d{2})(\d)/, '$1.$2'); // Insere ponto após os dois primeiros dígitos
-                        cnpj_login = cnpj_login.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); // Insere ponto após o quinto dígito
-                        cnpj_login = cnpj_login.replace(/\.(\d{3})(\d)/, '.$1/$2'); // Insere barra após o oitavo dígito
-                        cnpj_login = cnpj_login.replace(/(\d{4})(\d)/, '$1-$2'); // Insere hífen após o décimo segundo dígito
-                    }
-                    event.target.value = cnpj_login;
-                });
-            </script>
     </div>
 
     <div class="format">
