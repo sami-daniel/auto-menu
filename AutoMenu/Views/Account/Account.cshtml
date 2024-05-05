@@ -205,19 +205,9 @@
 </form>
 
 @section scripts {
-    <script src="~/js/Account.js"></script>
-    <script>
-        document.getElementById('Cnpj').addEventListener('input', function () {
-            var inputCnpj = this.value;
-            var cnpjList = @Html.Raw(Json.Serialize(ViewBag.Cnpjs));
-
-            var cnpjExists = cnpjList.includes(inputCnpj);
-
-            if (cnpjExists) {
-                document.getElementById('error-Cnpj').textContent = "CNPJ Existente";
-            } else {
-                document.getElementById('error-Cnpj').textContent = "";
-            }
-        })
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" asp-fallback-test="window.jQuery" asp-fallback-src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/js/Account.js" asp-append-version="true"></script>
+    <script src="~/js/VerifierInputCNPJ.js" asp-append-version="true"></script>
 }
