@@ -265,3 +265,30 @@ body {
     transform: translateY(1px);
   }
 }
+
+#inpLockLogin {
+    display:none;
+}
+
+    #inpLockLogin:checked + label {
+        background: #20cca5;
+    }
+
+        #inpLockLogin:checked + label svg {
+            opacity: 1;
+        }
+
+            #inpLockLogin:checked + label svg .bling {
+                animation: bling6132 0.3s linear forwards;
+                animation-delay: 0.2s;
+            }
+
+            #inpLockLogin:checked + label svg .lock {
+                stroke-dasharray: 48;
+                animation: locked 0.3s linear forwards;
+            }
+
+            #inpLockLogin:checked + label svg .lockb {
+                transform: rotate(0);
+                transform-origin: 14px 22px;
+            }
