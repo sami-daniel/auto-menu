@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>AutoMenu</RootNamespace>
+    <UserSecretsId>747f4b13-21d9-4b80-8ea7-d6b8dc1efe28</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
