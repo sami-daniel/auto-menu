@@ -1,4 +1,5 @@
 using Entities;
+using Microsoft.EntityFrameworkCore;
 using Services.Abstractions;
 using Services.Implementations;
 
@@ -11,7 +12,7 @@ namespace AutoMenu
             //servicos
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AutoMenuDbContext>();
+            builder.Services.AddDbContext<AutoMenuDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("AutoMenu"), new MySqlServerVersion("8.2.0")));
             builder.Services.AddScoped<IAddressService, AddressService>();
             builder.Services.AddScoped<IRestaurantService, RestaurantService>();
             builder.Services.AddSession();
