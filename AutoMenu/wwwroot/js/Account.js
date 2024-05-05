@@ -280,6 +280,18 @@ if (cnpj_login_valido && Password_login_valido) {
 }
 }
 
+function show_senha() {
+    var campoSenha = document.getElementById('Password');
+    if (campoSenha.type === "password") {
+        campoSenha.type = "text";
+       
+    } else {
+        campoSenha.type = "password";
+     
+    }
+}
+
+
 function show_senha_login() {
     var campoSenha = document.getElementById('Password-login');
     if (campoSenha.type === "password") {
