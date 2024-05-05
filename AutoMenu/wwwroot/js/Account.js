@@ -278,9 +278,20 @@ if (Password_login === "") {
 if (cnpj_login_valido && Password_login_valido) {
   document.getElementById('form-login').submit()
 }
-
-
 }
+
+function show_senha_login() {
+    var campoSenha = document.getElementById('Password-login');
+    if (campoSenha.type === "password") {
+        campoSenha.type = "text";
+       
+    } else {
+        campoSenha.type = "password";
+     
+    }
+}
+
+
 
 
 function back_stage1() {
