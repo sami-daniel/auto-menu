@@ -4,6 +4,8 @@ using Services.Abstractions;
 using Servicos.Exceptions;
 using AutoMenu.Models.Extensions;
 using Services.Helpers;
+using Entities;
+using Services.DTO.Responses;
 
 namespace AutoMenu.Controllers
 {
@@ -42,16 +44,18 @@ namespace AutoMenu.Controllers
 
             var fk_address = await _addressService.AddAddressAsync(addressAddRequest);
             restaurantAddRequest.FkAddressId = fk_address.AddressID;
+            RestaurantResponse restaurantResponse;
             try
             {
-                await _restaurantService.AddRestaurantAsync(restaurantAddRequest);
+                restaurantResponse = await _restaurantService.AddRestaurantAsync(restaurantAddRequest);
             }
             catch (ExistingRestaurantException)
             {
                 await _addressService.RemoveAddressByIDAsync(fk_address.AddressID);
                 return BadRequest($"Um restaurante com o CNPJ {restaurantAddRequest.CNPJ} já está registrado!");
             }
-            return RedirectToActionPermanent("", "Account");
+            HttpContext.Session.SetObject("User", restaurantResponse);
+            return RedirectToActionPermanent("", "Interface");
         }
         [HttpPost]
         [Route("[action]")]
