@@ -57,7 +57,7 @@ function show_stage2() {
     } else if (!cnpjPattern.test(Cnpj)) {
         span_cnpj.textContent = "cnpj invalido";
         var cnpj_caracteres = true;
-    } else if (span_cnpj.textContent === ""){
+    } else{
         span_cnpj.textContent = "";
         var cnpj_obrigatorio = true;
         var cnpj_caracteres = true;
