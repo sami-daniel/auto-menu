@@ -18,7 +18,7 @@ namespace Services.Abstractions
         /// Gets all addresses from the Data Source synchronously.
         /// </summary>
         /// <returns>All addresses from the Data Source</returns>
-        IEnumerable<AddressResponse> GetAllAddresses();
+        Task<IEnumerable<AddressResponse>> GetAllAddressesAsync();
         /// <summary>
         /// Removes a address by its ID number.
         /// </summary>
