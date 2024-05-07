@@ -23,11 +23,9 @@ namespace AutoMenu.Controllers
             _restaurantService = restaurantService;
             _webHostEnvironment = webHostEnvironment;
         }
-        public async Task<IActionResult> Account()
+        public IActionResult Account()
         {
             // metodo IActionResult para a pagina index principal
-            var restaurants = await _restaurantService.GetAllRestaurantsAsync();
-            ViewBag.Cnpjs = restaurants.Select(restaurants => restaurants.Cnpj);
             return View();
         }
         [HttpPost]
