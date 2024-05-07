@@ -72,7 +72,7 @@ namespace AutoMenu.Controllers
             return RedirectToActionPermanent("", "Interface");
         }
         [HttpPost]
-        [Route("[action]")]
+        [Route("verify/cnpj")]
         public async Task<IActionResult> CheckCNPJAvailability([FromBody] string CNPJ)
         {
             if (string.IsNullOrEmpty(CNPJ)) return BadRequest();
