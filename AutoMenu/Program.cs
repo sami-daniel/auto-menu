@@ -19,7 +19,6 @@ namespace AutoMenu
             builder.Services.AddSession();
             //cria o WebApplication
             var app = builder.Build();
-            //habilita os middlewares para lidar com certas requisi��es
             if (app.Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
