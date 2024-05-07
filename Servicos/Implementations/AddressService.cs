@@ -29,16 +29,11 @@ namespace Services.Implementations
             return endereco.ToAddressResponse();
         }
 
-        public IEnumerable<AddressResponse> GetAllAddresses()
+        public async Task<IEnumerable<AddressResponse>> GetAllAddressesAsync()
         {
-            List<AddressResponse> enderecoResponses = new List<AddressResponse>();
+            var adresses = await _db.Addresses.ToListAsync();
 
-            foreach (var item in _db.Addresses)
-            {
-                enderecoResponses.Add(item.ToAddressResponse());
-            }
-
-            return enderecoResponses;
+            return adresses.Select(a => a.ToAddressResponse());
         }
 
         public async Task RemoveAddressByIDAsync(int ID)
