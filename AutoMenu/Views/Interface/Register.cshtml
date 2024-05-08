@@ -1,4 +1,35 @@
-
+@section styles{
+    <link href="~/css/RegisterMenu" rel="stylesheet" />
+}
 @{
     Layout = "~/Views/Shared/_InterfaceLayout.cshtml";
 }
+
+<form>
+    <div class="format">
+        <label for="title">Titulo</label>
+        <input type="text" name="title" id="title" placeholder="Titulo">
+        <span></span>
+    </div>
+    <div class="format">
+        <label for="price">Valor</label>
+        <input type="text" name="price" id="price" placeholder="Titulo">
+        <span></span>
+    </div>
+
+    <div id="format-img">
+        <label for="img"></label>
+        <input type="file" name="img" id="img">
+        <img id="preview" src="#" alt="Preview da Imagem" style="display: none;">
+    </div>
+
+    <div class="format">
+        <label for="Description">Descrição</label>
+        <textarea name="Description" id="Description"></textarea>
+        <span></span>
+    </div>
+
+<button type="submit"></button>
+</form>
+
+<script src="~/js/Preview.js" asp-append-version="true"></script>
