@@ -29,7 +29,7 @@ namespace Services.Implementations
             return endereco.ToAddressResponse();
         }
 
-        public IEnumerable<AddressResponse> GetAllAddresses()
+        public async Task<IEnumerable<AddressResponse>> GetAllAddresses()
         {
             List<AddressResponse> enderecoResponses = new List<AddressResponse>();
 
@@ -38,7 +38,7 @@ namespace Services.Implementations
                 enderecoResponses.Add(item.ToAddressResponse());
             }
 
-            return enderecoResponses;
+            return await enderecoResponses;
         }
 
         public async Task RemoveAddressByIDAsync(int ID)
