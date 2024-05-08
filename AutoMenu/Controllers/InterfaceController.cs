@@ -24,5 +24,19 @@ namespace AutoMenu.Controllers
             ViewBag.ViewModelTRestaurantResponse = HttpContext.Session.GetObject<RestaurantResponse>("User");
             return View();
         }
+        [Route("Menu/[action]")]
+        public IActionResult Register()
+        {
+            if (HttpContext.Session.GetObject<RestaurantResponse>("User") == null && !_webHostEnvironment.IsDevelopment())
+            {
+                return RedirectToAction("", "Home");
+            }
+            //Nao o if
+
+            ViewBag.ViewModelTRestaurantResponse = HttpContext.Session.GetObject<RestaurantResponse>("User");
+            return View();
+        }
+
+
     }
 }
