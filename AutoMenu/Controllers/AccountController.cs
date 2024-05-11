@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Services.DTO.AddRequests;
 using Services.Abstractions;
 using Servicos.Exceptions;
-using AutoMenu.Models.Extensions;
 using Services.Helpers;
 using Entities;
 using Services.DTO.Responses;
+using AutoMenu.Infra.Extensions;
 
 namespace AutoMenu.Controllers
 {

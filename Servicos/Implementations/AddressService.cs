@@ -28,11 +28,9 @@ namespace Services.Implementations
 
             return endereco.ToAddressResponse();
         }
-
         public async Task<IEnumerable<AddressResponse>> GetAllAddressesAsync()
         {
             var adresses = await _db.Addresses.ToListAsync();
-
             return adresses.Select(a => a.ToAddressResponse());
         }
 
