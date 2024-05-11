@@ -16,7 +16,8 @@ namespace AutoMenu.Infrastructure.Filters
         public void OnActionExecuting(ActionExecutingContext context)
         {
             var session = context.HttpContext!.Session.GetObject<RestaurantResponse>("User");
-            if (session == null)
+            var webHostEnvironment = context.HttpContext.RequestServices.GetService(typeof(IWebHostEnvironment)) as IWebHostEnvironment;
+            if (session == null && !webHostEnvironment!.IsDevelopment())
             {
                 context.Result = new RedirectToRouteResult(
                     new RouteValueDictionary
