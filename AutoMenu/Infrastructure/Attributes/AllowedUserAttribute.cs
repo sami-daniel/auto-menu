@@ -1,6 +1,6 @@
 ﻿namespace AutoMenu.Infrastructure.Attributes
 {
-    public class AllowedUserAttribute
+    public class AllowedUserAttribute : Attribute
     {
     }
 }
