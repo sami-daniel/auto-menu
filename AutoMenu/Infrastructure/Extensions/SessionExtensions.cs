@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace AutoMenu.Models.Extensions
+namespace AutoMenu.Infra.Extensions
 {
     public static class SessionExtensions
     {

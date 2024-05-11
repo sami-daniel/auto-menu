@@ -1,4 +1,4 @@
-﻿using AutoMenu.Models.Extensions;
+﻿using AutoMenu.Infra.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Services.DTO.Responses;
 
