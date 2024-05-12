@@ -5,9 +5,9 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMenu", "AutoMenu.csproj", "{2794CE55-D4F7-4EFF-9301-AA8F5FABF7AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "..\Entidades\Entities.csproj", "{30070566-5062-4844-924C-BA20FE8A7D3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "..\Entities\Entities.csproj", "{30070566-5062-4844-924C-BA20FE8A7D3C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicos", "..\Servicos\Servicos.csproj", "{2FBD8E12-CE68-413A-9F03-5CA2F4765597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "..\Services\Services.csproj", "{2FBD8E12-CE68-413A-9F03-5CA2F4765597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
